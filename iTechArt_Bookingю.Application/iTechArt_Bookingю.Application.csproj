@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\iTechArt_Booking.Domain\iTechArt_Booking.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
