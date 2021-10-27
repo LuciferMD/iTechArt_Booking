@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\iTechArt_Booking.Domain\iTechArt_Booking.Domain.csproj" />
     <ProjectReference Include="..\iTechArt_Booking.Infastructure\iTechArt_Booking.Infastructure.csproj" />
     <ProjectReference Include="..\iTechArt_Bookingю.Application\iTechArt_Bookingю.Application.csproj" />
   </ItemGroup>

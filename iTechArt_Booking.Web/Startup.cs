@@ -27,6 +27,10 @@ namespace iTechArt_Booking.Web
         public void ConfigureServices(IServiceCollection services)
         {
 
+            //Domain
+            //services.AddScoped<UserService, UserService>();
+            //Infastructure
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

@@ -1,0 +1,12 @@
+D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Domain\obj\Debug\net5.0\iTechArt_Booking.Domain.csproj.AssemblyReference.cache
+D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Domain\obj\Debug\net5.0\iTechArt_Booking.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Domain\obj\Debug\net5.0\iTechArt_Booking.Domain.AssemblyInfoInputs.cache
+D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Domain\obj\Debug\net5.0\iTechArt_Booking.Domain.AssemblyInfo.cs
+D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Domain\obj\Debug\net5.0\iTechArt_Booking.Domain.csproj.CoreCompileInputs.cache
+D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Domain\bin\Debug\net5.0\iTechArt_Booking.Domain.deps.json
+D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Domain\bin\Debug\net5.0\iTechArt_Booking.Domain.dll
+D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Domain\bin\Debug\net5.0\ref\iTechArt_Booking.Domain.dll
+D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Domain\bin\Debug\net5.0\iTechArt_Booking.Domain.pdb
+D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Domain\obj\Debug\net5.0\iTechArt_Booking.Domain.dll
+D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Domain\obj\Debug\net5.0\ref\iTechArt_Booking.Domain.dll
+D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Domain\obj\Debug\net5.0\iTechArt_Booking.Domain.pdb

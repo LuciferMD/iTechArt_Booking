@@ -103,6 +103,28 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.11, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -149,6 +171,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Booking.Domain\\iTechArt_Booking.Domain.csproj": {
+                "projectPath": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Booking.Domain\\iTechArt_Booking.Domain.csproj"
+              },
               "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Booking.Infastructure\\iTechArt_Booking.Infastructure.csproj": {
                 "projectPath": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Booking.Infastructure\\iTechArt_Booking.Infastructure.csproj"
               },
