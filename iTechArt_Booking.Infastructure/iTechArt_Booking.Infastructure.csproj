@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\iTechArt_Bookingю.Application\iTechArt_Bookingю.Application.csproj" />
+    <ProjectReference Include="..\iTechArt_Bookingю.Application\iTechArt_Booking.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>

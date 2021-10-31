@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTechArt_Booking.WebUI", "iTechArt_Booking.Web\iTechArt_Booking.WebUI.csproj", "{EBCE2034-A2AB-4D7B-8DD2-D8EB0709B09E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iTechArt_Booking.WebUI", "iTechArt_Booking.Web\iTechArt_Booking.WebUI.csproj", "{EBCE2034-A2AB-4D7B-8DD2-D8EB0709B09E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTechArt_Bookingю.Application", "iTechArt_Bookingю.Application\iTechArt_Bookingю.Application.csproj", "{2FC6CF05-1241-48D7-BFA2-10783FE012FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iTechArt_Booking.Application", "iTechArt_Bookingю.Application\iTechArt_Booking.Application.csproj", "{2FC6CF05-1241-48D7-BFA2-10783FE012FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTechArt_Booking.Domain", "iTechArt_Booking.Domain\iTechArt_Booking.Domain.csproj", "{6D2DBA7C-8785-484F-8AD7-888D0D977776}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iTechArt_Booking.Domain", "iTechArt_Booking.Domain\iTechArt_Booking.Domain.csproj", "{6D2DBA7C-8785-484F-8AD7-888D0D977776}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTechArt_Booking.Infastructure", "iTechArt_Booking.Infastructure\iTechArt_Booking.Infastructure.csproj", "{712B9AF4-4D80-4658-8F5C-024A62BF6B11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iTechArt_Booking.Infastructure", "iTechArt_Booking.Infastructure\iTechArt_Booking.Infastructure.csproj", "{712B9AF4-4D80-4658-8F5C-024A62BF6B11}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4D19940F-52C1-4C21-9EB7-BDE6BF687031}"
 EndProject

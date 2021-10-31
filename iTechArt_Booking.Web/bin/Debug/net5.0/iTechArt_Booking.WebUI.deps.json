@@ -34,9 +34,9 @@
       "iTechArt_Booking.WebUI/1.0.0": {
         "dependencies": {
           "Swashbuckle.AspNetCore": "5.6.3",
+          "iTechArt_Booking.Application": "1.0.0",
           "iTechArt_Booking.Domain": "1.0.0",
           "iTechArt_Booking.Infastructure": "1.0.0",
-          "iTechArt_Bookingю.Application": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -1347,6 +1347,17 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "iTechArt_Booking.Application/1.0.0": {
+        "dependencies": {
+          "iTechArt_Booking.Domain": "1.0.0"
+        },
+        "runtime": {
+          "iTechArt_Booking.Application.dll": {}
+        },
+        "compile": {
+          "iTechArt_Booking.Application.dll": {}
+        }
+      },
       "iTechArt_Booking.Domain/1.0.0": {
         "runtime": {
           "iTechArt_Booking.Domain.dll": {}
@@ -1359,24 +1370,13 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.11",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.11",
-          "iTechArt_Bookingю.Application": "1.0.0"
+          "iTechArt_Booking.Application": "1.0.0"
         },
         "runtime": {
           "iTechArt_Booking.Infastructure.dll": {}
         },
         "compile": {
           "iTechArt_Booking.Infastructure.dll": {}
-        }
-      },
-      "iTechArt_Bookingю.Application/1.0.0": {
-        "dependencies": {
-          "iTechArt_Booking.Domain": "1.0.0"
-        },
-        "runtime": {
-          "iTechArt_Bookingю.Application.dll": {}
-        },
-        "compile": {
-          "iTechArt_Bookingю.Application.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -3773,17 +3773,17 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
+    "iTechArt_Booking.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "iTechArt_Booking.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "iTechArt_Booking.Infastructure/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "iTechArt_Bookingю.Application/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

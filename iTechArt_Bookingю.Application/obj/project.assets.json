@@ -33,9 +33,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Bookingю.Application.csproj",
-      "projectName": "iTechArt_Bookingю.Application",
-      "projectPath": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Bookingю.Application.csproj",
+      "projectUniqueName": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Booking.Application.csproj",
+      "projectName": "iTechArt_Booking.Application",
+      "projectPath": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Booking.Application.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
       "outputPath": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\obj\\",
       "projectStyle": "PackageReference",

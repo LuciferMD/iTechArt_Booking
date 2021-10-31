@@ -88,8 +88,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Bookingю.Application.csproj": {
-                "projectPath": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Bookingю.Application.csproj"
+              "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Booking.Application.csproj": {
+                "projectPath": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Booking.Application.csproj"
               }
             }
           }
@@ -177,8 +177,8 @@
               "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Booking.Infastructure\\iTechArt_Booking.Infastructure.csproj": {
                 "projectPath": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Booking.Infastructure\\iTechArt_Booking.Infastructure.csproj"
               },
-              "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Bookingю.Application.csproj": {
-                "projectPath": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Bookingю.Application.csproj"
+              "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Booking.Application.csproj": {
+                "projectPath": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Booking.Application.csproj"
               }
             }
           }
@@ -220,12 +220,12 @@
         }
       }
     },
-    "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Bookingю.Application.csproj": {
+    "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Booking.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Bookingю.Application.csproj",
-        "projectName": "iTechArt_Bookingю.Application",
-        "projectPath": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Bookingю.Application.csproj",
+        "projectUniqueName": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Booking.Application.csproj",
+        "projectName": "iTechArt_Booking.Application",
+        "projectPath": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Booking.Application.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\obj\\",
         "projectStyle": "PackageReference",

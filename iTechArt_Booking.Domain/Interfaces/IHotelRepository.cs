@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace iTechArt_Booking.Domain.Interfaces
 {
-    interface IHotelRepository
+    public interface IHotelRepository
     {
         public List<Hotel> GetAll();
     }

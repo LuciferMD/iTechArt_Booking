@@ -15,7 +15,6 @@ D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\obj\Debug\net5.0\iTechArt_Book
 D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\obj\Debug\net5.0\iTechArt_Booking.WebUI.AssemblyInfoInputs.cache
 D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\obj\Debug\net5.0\iTechArt_Booking.WebUI.AssemblyInfo.cs
 D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\obj\Debug\net5.0\iTechArt_Booking.WebUI.csproj.CoreCompileInputs.cache
-D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\obj\Debug\net5.0\iTechArt_Booking.WebUI.MvcApplicationPartsAssemblyInfo.cs
 D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\obj\Debug\net5.0\iTechArt_Booking.WebUI.MvcApplicationPartsAssemblyInfo.cache
 D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\obj\Debug\net5.0\staticwebassets\iTechArt_Booking.WebUI.StaticWebAssets.Manifest.cache
 D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\obj\Debug\net5.0\staticwebassets\iTechArt_Booking.WebUI.StaticWebAssets.xml
@@ -29,10 +28,8 @@ D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\obj\Debug\net5.0\iTechArt_Book
 D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\obj\Debug\net5.0\iTechArt_Booking.WebUI.csproj.AssemblyReference.cache
 D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\bin\Debug\net5.0\iTechArt_Booking.Domain.dll
 D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\bin\Debug\net5.0\iTechArt_Booking.Infastructure.dll
-D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\bin\Debug\net5.0\iTechArt_Bookingю.Application.dll
 D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\bin\Debug\net5.0\iTechArt_Booking.Domain.pdb
 D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\bin\Debug\net5.0\iTechArt_Booking.Infastructure.pdb
-D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\bin\Debug\net5.0\iTechArt_Bookingю.Application.pdb
 D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
 D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
@@ -63,3 +60,5 @@ D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\bin\Debug\net5.0\runtimes\win-
 D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\bin\Debug\net5.0\iTechArt_Booking.Application.dll
+D:\iTechArt\iTechArt_Booking\iTechArt_Booking.Web\bin\Debug\net5.0\iTechArt_Booking.Application.pdb

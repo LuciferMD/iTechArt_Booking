@@ -19,12 +19,28 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
                 {
                     Id = 1,
                     First_name = "Max",
-                    Second_name = "Some text...",
-                    Patronymic = "efwe",
-                    Tel_number = "ergf"
+                    Second_name = "markiy",
+                    Patronymic = "Maximovich",
+                    Tel_number = "666"
                 },
 
+                new User
+                {
+                    Id = 2,
+                    First_name = "Ricky",
+                    Second_name = "Ticky.",
+                    Patronymic = "Tavi",
+                    Tel_number = "+37512121212"
+                },
 
+                new User
+                {
+                    Id = 3,
+                    First_name = "bob",
+                    Second_name = "Bobobi",
+                    Patronymic = "-",
+                    Tel_number = "0000"
+                },
 
             };
         }

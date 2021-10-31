@@ -1520,6 +1520,19 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "iTechArt_Booking.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "iTechArt_Booking.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/iTechArt_Booking.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/iTechArt_Booking.Application.dll": {}
+        }
+      },
       "iTechArt_Booking.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -1528,19 +1541,6 @@
         },
         "runtime": {
           "bin/placeholder/iTechArt_Booking.Domain.dll": {}
-        }
-      },
-      "iTechArt_Bookingю.Application/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "iTechArt_Booking.Domain": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/iTechArt_Bookingю.Application.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/iTechArt_Bookingю.Application.dll": {}
         }
       }
     }
@@ -5762,15 +5762,15 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "iTechArt_Booking.Application/1.0.0": {
+      "type": "project",
+      "path": "../iTechArt_Bookingю.Application/iTechArt_Booking.Application.csproj",
+      "msbuildProject": "../iTechArt_Bookingю.Application/iTechArt_Booking.Application.csproj"
+    },
     "iTechArt_Booking.Domain/1.0.0": {
       "type": "project",
       "path": "../iTechArt_Booking.Domain/iTechArt_Booking.Domain.csproj",
       "msbuildProject": "../iTechArt_Booking.Domain/iTechArt_Booking.Domain.csproj"
-    },
-    "iTechArt_Bookingю.Application/1.0.0": {
-      "type": "project",
-      "path": "../iTechArt_Bookingю.Application/iTechArt_Bookingю.Application.csproj",
-      "msbuildProject": "../iTechArt_Bookingю.Application/iTechArt_Bookingю.Application.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5779,7 +5779,7 @@
       "Microsoft.EntityFrameworkCore.Design >= 5.0.11",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.11",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.11",
-      "iTechArt_Bookingю.Application >= 1.0.0"
+      "iTechArt_Booking.Application >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5813,8 +5813,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Bookingю.Application.csproj": {
-              "projectPath": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Bookingю.Application.csproj"
+            "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Booking.Application.csproj": {
+              "projectPath": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Booking.Application.csproj"
             }
           }
         }
