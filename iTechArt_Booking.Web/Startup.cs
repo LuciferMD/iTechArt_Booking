@@ -1,7 +1,10 @@
+using iTechArt_Booking.Domain.Interfaces;
+using iTechArt_Booking.Infastructure.Repositories.EFRepository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -31,6 +34,9 @@ namespace iTechArt_Booking.Web
             //services.AddScoped<UserService, UserService>();
             //Infastructure
 
+            services.AddDbContext<EFBookingDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+            services.AddTransient<IUserRepository, EFUserRepository>();
+            
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

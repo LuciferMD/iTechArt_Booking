@@ -9,6 +9,13 @@ namespace iTechArt_Booking.Domain.Interfaces
 {
     public interface IUserRepository
     {
-        public List<User> GetAll();
+        IEnumerable<User> GetAll();
+        User Get(long id);
+
+        void Create(User item);
+
+        void Update(User item);
+        User Delete(long id);
+
     }
 }
