@@ -9,6 +9,15 @@ namespace iTechArt_Booking.Domain.Interfaces
 {
     public interface IHotelRepository
     {
-        public List<Hotel> GetAll();
+         IEnumerable<Hotel> GetAll();
+
+         Hotel Get(long id);
+
+         void Create(Hotel hotel);
+
+         void Update(Hotel hotel);
+
+         Hotel Delete(long id); 
     }
-}
+
+ }

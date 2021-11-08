@@ -33,11 +33,13 @@ namespace iTechArt_Booking.Web
             //Domain
             //services.AddScoped<UserService, UserService>();
             //Infastructure
+            services.AddControllers();
 
             services.AddDbContext<EFBookingDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
             services.AddTransient<IUserRepository, EFUserRepository>();
+            services.AddTransient<IHotelRepository, EFHotelRepository>();
+
             
-            services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "iTechArt_Booking.Web", Version = "v1" });

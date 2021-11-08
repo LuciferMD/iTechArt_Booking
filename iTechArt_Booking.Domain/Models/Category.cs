@@ -12,6 +12,5 @@ namespace iTechArt_Booking.Domain.Models
         public float Cost_per_day { get; set; }
         public long Number_of_beds { get; set; }
         public string Picture { get; set; }
-        public List<Hotel> Hotels { get; set; }
     }
 }

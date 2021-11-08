@@ -10,8 +10,14 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
 {
     public class EFBookingDBContext : DbContext
     {
-        public EFBookingDBContext(DbContextOptions<EFBookingDBContext> options): base (options) { }
+        public EFBookingDBContext(DbContextOptions<EFBookingDBContext> options) : base(options) { }
 
-        public DbSet <User> Users { get; set; }
+
+        public DbSet<Hotel> Hotels { get; set; }
+
+        public DbSet<User> Users { get; set; }
+
+
     }
 }
+

@@ -21,7 +21,7 @@ namespace iTechArt_Booking.WebUI.Controllers
             UserRepository = userRepository;
         }
 
-        [HttpGet(Name = "GetAllItems")]
+        [HttpGet(Name = "GetAllUsers")]
         public IEnumerable<User> GetAll()
         {
             return UserRepository.GetAll();

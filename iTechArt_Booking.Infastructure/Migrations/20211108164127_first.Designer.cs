@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iTechArt_Booking.Infastructure.Repositories.EFRepository;
 
 namespace iTechArt_Booking.Infastructure.Migrations
 {
     [DbContext(typeof(EFBookingDBContext))]
-    partial class EFBookingDBContextModelSnapshot : ModelSnapshot
+    [Migration("20211108164127_first")]
+    partial class first
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -17,7 +17,7 @@ namespace iTechArt_Booking.Application.Services
             hotelRepository = _hotelRepository ?? throw new ArgumentNullException(nameof(hotelRepository));
         }
 
-        public List<Hotel> GetAll()
+        public IEnumerable<Hotel> GetAll()
         {
             return hotelRepository.GetAll();
         }
