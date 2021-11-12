@@ -74,7 +74,7 @@ namespace iTechArt_Booking.WebUI.Controllers
             return RedirectToRoute("GetAllHotels");
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id::long}")]
         public IActionResult Delete(long id)
         {
             var deletedHotel = HotelRepository.Delete(id);
