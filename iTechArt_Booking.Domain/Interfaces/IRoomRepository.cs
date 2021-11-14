@@ -9,7 +9,10 @@ namespace iTechArt_Booking.Domain.Interfaces
 {
      public interface IRoomRepository
     {
-        public List<Room> GetAll();
+        IEnumerable<Room> GetAll();
+
+        void Create(Room room);
+        
     }
 
 }

@@ -39,7 +39,9 @@ namespace iTechArt_Booking.Web
             services.AddTransient<IUserRepository, EFUserRepository>();
             services.AddTransient<IHotelRepository, EFHotelRepository>();
             services.AddTransient<IBookingRepository, EFBookingRepository>();
-            
+            services.AddTransient<IRoomRepository, EFRoomRepository>();
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "iTechArt_Booking.Web", Version = "v1" });
