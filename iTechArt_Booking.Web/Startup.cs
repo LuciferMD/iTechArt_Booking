@@ -38,7 +38,7 @@ namespace iTechArt_Booking.Web
             services.AddDbContext<EFBookingDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
             services.AddTransient<IUserRepository, EFUserRepository>();
             services.AddTransient<IHotelRepository, EFHotelRepository>();
-
+            services.AddTransient<IBookingRepository, EFBookingRepository>();
             
             services.AddSwaggerGen(c =>
             {

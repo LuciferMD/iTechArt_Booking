@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace iTechArt_Booking.Infastructure.Repositories.Fakes
 {
-    public class BookingFakeRepository : IBookingRepository
+    public class BookingFakeRepository// : IBookingRepository
     {
         public List<Booking> GetAll()
         {

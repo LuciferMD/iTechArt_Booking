@@ -17,7 +17,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
 
         public DbSet<User> Users { get; set; }
 
-
+        public DbSet<Booking> Booking { get; set; }
     }
 }
 
