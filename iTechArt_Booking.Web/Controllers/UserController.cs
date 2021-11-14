@@ -28,7 +28,7 @@ namespace iTechArt_Booking.WebUI.Controllers
         }
 
 
-        [HttpGet("{id::long}",Name ="GetUser")]
+        [HttpGet("{id}",Name ="GetUser")]
         public IActionResult Get(long id)
         {
             User user = UserRepository.Get(id);
@@ -51,7 +51,7 @@ namespace iTechArt_Booking.WebUI.Controllers
             return CreatedAtRoute("GetUser", new { Id = user.Id }, user);
         }
 
-        [HttpPut("id")]
+        [HttpPut("{id}", Name = "UpdateUser")] // to do
         public IActionResult Update (long id,[FromBody] User updatedUser)
         {
             if(updatedUser==null|| updatedUser.Id != id)
@@ -69,7 +69,7 @@ namespace iTechArt_Booking.WebUI.Controllers
             return RedirectToRoute("GetAllItems");
         }
 
-        [HttpDelete("{id::long}")]
+        [HttpDelete("{id}")]
         public IActionResult Delete (long id)
         {
 

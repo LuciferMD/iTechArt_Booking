@@ -17,6 +17,6 @@ namespace iTechArt_Booking.Domain.Models
 
         public string Description { get; set; }
 
-        public List<Category> Categories { get; set; }
+       
     }
 }

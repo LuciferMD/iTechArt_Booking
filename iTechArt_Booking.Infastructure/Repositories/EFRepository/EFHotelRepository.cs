@@ -40,7 +40,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
             currentHotel.Pictures = updatedHotel.Pictures;
             currentHotel.Stars = updatedHotel.Stars;
             currentHotel.Description = updatedHotel.Description;
-            currentHotel.Categories = updatedHotel.Categories;
+           
 
             Context.Hotels.Update(currentHotel);
             Context.SaveChanges();

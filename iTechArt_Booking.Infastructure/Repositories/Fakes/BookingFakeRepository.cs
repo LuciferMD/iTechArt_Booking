@@ -16,8 +16,8 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
                 new Booking
                 {
                     Id = 1,
-                    User = new User(),   ////Question
-                    Rooms = new Room(),
+                    User_id = 1,   ////Question
+                    Rooms_id =1,
                     Status = 'N',
                     Date_from = new DateTime(2001, 01, 21),
                     Date_to = new DateTime(2001, 01, 27)
@@ -26,8 +26,8 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
                     new Booking
                 {
                     Id = 2,
-                    User = new User(),  
-                    Rooms = new Room(),
+                    User_id = 2,  
+                    Rooms_id = 1,
                     Status = 'N',
                     Date_from = new DateTime(2005, 01, 11),
                     Date_to = new DateTime(2005, 01, 17)
@@ -36,8 +36,8 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
                         new Booking
                 {
                     Id = 3,
-                    User = new User(),   
-                    Rooms = new Room(),
+                    User_id = 1,
+                    Rooms_id = 2,
                     Status = 'F',
                     Date_from = new DateTime(2017, 02, 21),
                     Date_to = new DateTime(2017, 02, 27)
@@ -46,8 +46,8 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
                             new Booking
                 {
                     Id = 4,
-                    User = new User(),   
-                    Rooms = new Room(),
+                   User_id = 3,
+                    Rooms_id = 1,
                     Status = 'F',
                     Date_from = new DateTime(2020, 04, 27),
                     Date_to = new DateTime(2021, 05, 07)
@@ -56,8 +56,8 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
                                 new Booking
                 {
                     Id = 5,
-                    User = new User(),   
-                    Rooms = new Room(),
+                    User_id = 3,
+                    Rooms_id = 2,
                     Status = 'N',
                     Date_from = new DateTime(2021, 11, 01),
                     Date_to = new DateTime(2001, 11, 16)

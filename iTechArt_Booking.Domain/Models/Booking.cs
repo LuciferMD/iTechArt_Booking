@@ -10,9 +10,9 @@ namespace iTechArt_Booking.Domain.Models
     {
         public long Id { get; set; }
 
-        public User User { get; set; }
+        public long User_id { get; set; }
 
-        public Room Rooms { get; set; }
+        public long Rooms_id { get; set; }
 
         public char Status { get; set; }
         public DateTime Date_from {get;set;}

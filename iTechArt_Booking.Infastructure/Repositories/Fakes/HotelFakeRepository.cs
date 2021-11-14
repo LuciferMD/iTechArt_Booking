@@ -20,8 +20,8 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
                     Name ="Moscow Hotel",
                     Stars =5,
                     Pictures="Yand//fff//fff",
-                    Description ="Ver nice.",
-                    Categories = new List<Category>()
+                    Description ="Ver nice."
+                   
                 },
 
                   new Hotel
@@ -30,8 +30,8 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
                     Name ="Billy Hotel",
                     Stars =2,
                     Pictures="Yand//fff//fff2",
-                    Description ="So so.",
-                    Categories = new List<Category>()
+                    Description ="So so."
+                   
                 },
 
                    new Hotel
@@ -40,8 +40,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
                     Name ="Askey Hotel",
                     Stars =4,
                     Pictures="Yand//fff//fff3",
-                    Description ="It's skrskrskrskr.",
-                    Categories = new List<Category>()
+                    Description ="It's skrskrskrskr."
                 },
 
                   new Hotel
@@ -50,8 +49,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
                     Name ="Normandia Hotel",
                     Stars =5,
                     Pictures="Yand//fff//fff4",
-                    Description ="In Normandes",
-                    Categories = new List<Category>()
+                    Description ="In Normandes"
                 },
 
                             new Hotel
@@ -60,8 +58,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
                     Name ="Sport Hotel",
                     Stars =4,
                     Pictures="Yand//fff//fff5",
-                    Description ="Whith sportes club.",
-                    Categories = new List<Category>()
+                    Description ="Whith sportes club."
                 },
 
             };
