@@ -20,6 +20,8 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
         public DbSet<Booking> Booking { get; set; }
 
         public DbSet<Room> Rooms { get; set; }
+
+        public DbSet<Review> Reviews { get; set; }
     }
 }
 

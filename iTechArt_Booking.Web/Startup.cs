@@ -40,7 +40,7 @@ namespace iTechArt_Booking.Web
             services.AddTransient<IHotelRepository, EFHotelRepository>();
             services.AddTransient<IBookingRepository, EFBookingRepository>();
             services.AddTransient<IRoomRepository, EFRoomRepository>();
-
+            services.AddTransient<IReviewRepository, EFReviewRepository>();
 
             services.AddSwaggerGen(c =>
             {

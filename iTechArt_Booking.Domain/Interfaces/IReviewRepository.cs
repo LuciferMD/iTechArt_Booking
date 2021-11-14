@@ -9,6 +9,8 @@ namespace iTechArt_Booking.Domain.Interfaces
 {
     public interface IReviewRepository
     {
-        public List<Review> GetAll(); 
+        IEnumerable<Review> GetAll();
+
+        void Create(Review review);
     }
 }
