@@ -21,7 +21,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
             return Context.Hotels;
         }
 
-        public Hotel Get(long id)
+        public Hotel Get(Guid id)
         {
             return Context.Hotels.Find(id);
         }
@@ -46,7 +46,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
             Context.SaveChanges();
         } 
 
-        public Hotel Delete (long id)
+        public Hotel Delete (Guid id)
         {
             Hotel hotel = Get(id);
             if (hotel != null)

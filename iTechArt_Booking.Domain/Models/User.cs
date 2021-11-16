@@ -8,7 +8,7 @@ namespace iTechArt_Booking.Domain.Models
 {
     public class User
     {
-        public long Id { get; set; }
+        public Guid Id { get; set; }
         public string First_name { get; set; }
         public string Second_name { get; set; }
         public string Patronymic { get; set; }
@@ -16,3 +16,5 @@ namespace iTechArt_Booking.Domain.Models
     }
 
 }
+//save user in db
+//add servise and controller   // moddel in web //registrationnmodels.cs

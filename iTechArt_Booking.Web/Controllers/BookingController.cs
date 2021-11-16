@@ -33,7 +33,7 @@ namespace iTechArt_Booking.WebUI.Controllers
         }
 
         [HttpGet("{id}", Name ="GetBooking")]
-        public IActionResult Get(long id)
+        public IActionResult Get(Guid id)
         {
             Booking booking = BookingRepository.Get(id);
             if(booking == null)
@@ -57,7 +57,7 @@ namespace iTechArt_Booking.WebUI.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(long id)
+        public IActionResult Delete(Guid id)
         {
             var deletedBooking = BookingRepository.Get(id);
             if (deletedBooking == null)

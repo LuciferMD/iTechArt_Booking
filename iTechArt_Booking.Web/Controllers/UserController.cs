@@ -29,7 +29,7 @@ namespace iTechArt_Booking.WebUI.Controllers
 
 
         [HttpGet("{id}",Name ="GetUser")]
-        public IActionResult Get(long id)
+        public IActionResult Get(Guid id)
         {
             User user = UserRepository.Get(id);
             if(user == null)
@@ -52,7 +52,7 @@ namespace iTechArt_Booking.WebUI.Controllers
         }
 
         [HttpPut("{id}", Name = "UpdateUser")] // to do
-        public IActionResult Update (long id,[FromBody] User updatedUser)
+        public IActionResult Update (Guid id,[FromBody] User updatedUser)
         {
             if(updatedUser==null|| updatedUser.Id != id)
             {
@@ -70,7 +70,7 @@ namespace iTechArt_Booking.WebUI.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete (long id)
+        public IActionResult Delete (Guid id)
         {
 
             var deletedUser = UserRepository.Delete(id);

@@ -15,9 +15,9 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
             return new List<Booking>() {
                 new Booking
                 {
-                    Id = 1,
-                    User_id = 1,   ////Question
-                    Rooms_id =1,
+                    Id =Guid.NewGuid(),
+                    User_id = Guid.NewGuid(),   ////Question
+                    Rooms_id =Guid.NewGuid(),
                     Status = 'N',
                     Date_from = new DateTime(2001, 01, 21),
                     Date_to = new DateTime(2001, 01, 27)
@@ -25,9 +25,9 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
 
                     new Booking
                 {
-                    Id = 2,
-                    User_id = 2,  
-                    Rooms_id = 1,
+                    Id =Guid.NewGuid(),
+                    User_id = Guid.NewGuid(),  
+                    Rooms_id = Guid.NewGuid(),
                     Status = 'N',
                     Date_from = new DateTime(2005, 01, 11),
                     Date_to = new DateTime(2005, 01, 17)
@@ -35,9 +35,9 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
 
                         new Booking
                 {
-                    Id = 3,
-                    User_id = 1,
-                    Rooms_id = 2,
+                    Id =Guid.NewGuid(),
+                    User_id = Guid.NewGuid(),
+                    Rooms_id = Guid.NewGuid(),
                     Status = 'F',
                     Date_from = new DateTime(2017, 02, 21),
                     Date_to = new DateTime(2017, 02, 27)
@@ -45,9 +45,9 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
 
                             new Booking
                 {
-                    Id = 4,
-                   User_id = 3,
-                    Rooms_id = 1,
+                    Id =Guid.NewGuid(),
+                    User_id = Guid.NewGuid(),
+                    Rooms_id = Guid.NewGuid(),
                     Status = 'F',
                     Date_from = new DateTime(2020, 04, 27),
                     Date_to = new DateTime(2021, 05, 07)
@@ -55,9 +55,9 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
 
                                 new Booking
                 {
-                    Id = 5,
-                    User_id = 3,
-                    Rooms_id = 2,
+                    Id =Guid.NewGuid(),
+                    User_id = Guid.NewGuid(),
+                    Rooms_id = Guid.NewGuid(),
                     Status = 'N',
                     Date_from = new DateTime(2021, 11, 01),
                     Date_to = new DateTime(2001, 11, 16)

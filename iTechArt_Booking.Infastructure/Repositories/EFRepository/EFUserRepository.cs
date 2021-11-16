@@ -23,7 +23,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
             return Context.Users;
         }
 
-        public User Get(long Id)
+        public User Get(Guid Id)
         {
             return Context.Users.Find(Id);
         }
@@ -47,7 +47,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
             Context.SaveChanges();
         }
 
-        public User Delete(long Id)
+        public User Delete(Guid Id)
         {
             User user = Get(Id);
 

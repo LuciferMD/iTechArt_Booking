@@ -33,7 +33,7 @@ namespace iTechArt_Booking.WebUI.Controllers
         }
 
         [HttpGet("{id}",Name ="GetHotel")]
-        public IActionResult Get(long id)
+        public IActionResult Get(Guid id)
         {
             Hotel hotel = HotelRepository.Get(id);
             if (hotel == null)
@@ -56,7 +56,7 @@ namespace iTechArt_Booking.WebUI.Controllers
         }
 
         [HttpPut("{id}")] //to do
-        public IActionResult Update(long id,[FromBody] Hotel updatedHotel)
+        public IActionResult Update(Guid id,[FromBody] Hotel updatedHotel)
         {
             if (updatedHotel == null || updatedHotel.Id!=id)
             {
@@ -75,7 +75,7 @@ namespace iTechArt_Booking.WebUI.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(long id)
+        public IActionResult Delete(Guid id)
         {
             var deletedHotel = HotelRepository.Delete(id);
 

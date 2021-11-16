@@ -8,11 +8,11 @@ namespace iTechArt_Booking.Domain.Models
 {
     public class Review
     {
-        public long Id { get; set; }
+        public Guid Id { get; set; }
 
-        public long User_id { get; set; }
+        public Guid User_id { get; set; }
 
-        public long Hotel_id { get; set; }
+        public Guid Hotel_id { get; set; }
 
         public string Text { get; set; }
 

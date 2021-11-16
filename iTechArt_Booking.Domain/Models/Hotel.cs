@@ -8,7 +8,7 @@ namespace iTechArt_Booking.Domain.Models
 {
     public class Hotel
     {
-        public long Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
 
         public int Stars { get; set; }

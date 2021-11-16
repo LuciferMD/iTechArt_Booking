@@ -10,12 +10,12 @@ namespace iTechArt_Booking.Domain.Interfaces
     public interface IUserRepository
     {
         IEnumerable<User> GetAll();
-        User Get(long id);
+        User Get(Guid id);
 
         void Create(User item);
 
         void Update(User item);
-        User Delete(long id);
+        User Delete(Guid id);
 
     }
 }

@@ -22,7 +22,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
             return Context.Booking;
         }
 
-        public Booking Get(long id)
+        public Booking Get(Guid id)
         {
             return Context.Booking.Find(id);
         }
@@ -33,7 +33,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
             Context.SaveChanges();
         }
 
-        public Booking Delete(long id)
+        public Booking Delete(Guid id)
         {
             Booking booking = Get(id);
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
 {
-    public class EFBookingDBContext : DbContext
+    public class EFBookingDBContext : DbContext//identitydbcontext<USER,isentyRole,long>
     {
         public EFBookingDBContext(DbContextOptions<EFBookingDBContext> options) : base(options) { }
 

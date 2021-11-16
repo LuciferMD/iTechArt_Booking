@@ -11,10 +11,10 @@ namespace iTechArt_Booking.Domain.Interfaces
     {
         IEnumerable<Booking> GetAll();
 
-        Booking Get(long id);
+        Booking Get(Guid id);
         void Create(Booking booking);
 
-        Booking Delete(long id);
+        Booking Delete(Guid id);
 
     }
 }

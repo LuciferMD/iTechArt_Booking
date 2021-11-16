@@ -16,7 +16,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
             {
                 new Hotel
                 {
-                    Id = 1,
+                    Id = Guid.NewGuid(),
                     Name ="Moscow Hotel",
                     Stars =5,
                     Pictures="Yand//fff//fff",
@@ -26,7 +26,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
 
                   new Hotel
                 {
-                    Id = 2,
+                    Id = Guid.NewGuid(),
                     Name ="Billy Hotel",
                     Stars =2,
                     Pictures="Yand//fff//fff2",
@@ -36,7 +36,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
 
                    new Hotel
                 {
-                    Id = 3,
+                    Id = Guid.NewGuid(),
                     Name ="Askey Hotel",
                     Stars =4,
                     Pictures="Yand//fff//fff3",
@@ -45,7 +45,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
 
                   new Hotel
                 {
-                    Id = 4,
+                    Id = Guid.NewGuid(),
                     Name ="Normandia Hotel",
                     Stars =5,
                     Pictures="Yand//fff//fff4",
@@ -54,7 +54,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
 
                             new Hotel
                 {
-                    Id = 1,
+                    Id = Guid.NewGuid(),
                     Name ="Sport Hotel",
                     Stars =4,
                     Pictures="Yand//fff//fff5",

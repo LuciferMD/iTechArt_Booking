@@ -17,7 +17,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
             {
                 new User
                 {
-                    Id = 1,
+                    Id = Guid.NewGuid(),          
                     First_name = "Max",
                     Second_name = "markiy",
                     Patronymic = "Maximovich",
@@ -26,7 +26,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
 
                 new User
                 {
-                    Id = 2,
+                    Id = Guid.NewGuid(),
                     First_name = "Ricky",
                     Second_name = "Ticky.",
                     Patronymic = "Tavi",
@@ -35,7 +35,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
 
                 new User
                 {
-                    Id = 3,
+                    Id = Guid.NewGuid(),
                     First_name = "bob",
                     Second_name = "Bobobi",
                     Patronymic = "-",

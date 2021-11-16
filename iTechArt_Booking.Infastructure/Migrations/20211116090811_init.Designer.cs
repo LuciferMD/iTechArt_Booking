@@ -10,8 +10,8 @@ using iTechArt_Booking.Infastructure.Repositories.EFRepository;
 namespace iTechArt_Booking.Infastructure.Migrations
 {
     [DbContext(typeof(EFBookingDBContext))]
-    [Migration("20211114174113_Rooms_v2")]
-    partial class Rooms_v2
+    [Migration("20211116090811_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,10 +23,9 @@ namespace iTechArt_Booking.Infastructure.Migrations
 
             modelBuilder.Entity("iTechArt_Booking.Domain.Models.Booking", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("Date_from")
                         .HasColumnType("datetime2");
@@ -34,15 +33,15 @@ namespace iTechArt_Booking.Infastructure.Migrations
                     b.Property<DateTime>("Date_to")
                         .HasColumnType("datetime2");
 
-                    b.Property<long>("Rooms_id")
-                        .HasColumnType("bigint");
+                    b.Property<Guid>("Rooms_id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(1)");
 
-                    b.Property<long>("User_id")
-                        .HasColumnType("bigint");
+                    b.Property<Guid>("User_id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
@@ -51,10 +50,9 @@ namespace iTechArt_Booking.Infastructure.Migrations
 
             modelBuilder.Entity("iTechArt_Booking.Domain.Models.Hotel", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -73,21 +71,40 @@ namespace iTechArt_Booking.Infastructure.Migrations
                     b.ToTable("Hotels");
                 });
 
+            modelBuilder.Entity("iTechArt_Booking.Domain.Models.Review", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("Hotel_id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("User_id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Reviews");
+                });
+
             modelBuilder.Entity("iTechArt_Booking.Domain.Models.Room", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Category")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Cost_per_day")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<float>("Cost_per_day")
+                        .HasColumnType("real");
 
-                    b.Property<long>("Hotel_id")
-                        .HasColumnType("bigint");
+                    b.Property<Guid>("Hotel_id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<long>("Number_of_beds")
                         .HasColumnType("bigint");
@@ -99,10 +116,9 @@ namespace iTechArt_Booking.Infastructure.Migrations
 
             modelBuilder.Entity("iTechArt_Booking.Domain.Models.User", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("First_name")
                         .HasColumnType("nvarchar(max)");
