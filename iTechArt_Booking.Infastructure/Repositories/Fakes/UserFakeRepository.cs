@@ -18,28 +18,28 @@ namespace iTechArt_Booking.Infastructure.Repositories.Fakes
                 new User
                 {
                     Id = Guid.NewGuid(),          
-                    First_name = "Max",
-                    Second_name = "markiy",
-                    Patronymic = "Maximovich",
-                    Tel_number = "666"
+                    FirstName = "Max",
+                    SecondName = "markiy",
+                    LastName = "Maximovich",
+                    PhoneNumber = "666"
                 },
 
                 new User
                 {
                     Id = Guid.NewGuid(),
-                    First_name = "Ricky",
-                    Second_name = "Ticky.",
-                    Patronymic = "Tavi",
-                    Tel_number = "+37512121212"
+                    FirstName = "Ricky",
+                    SecondName = "Ticky.",
+                    LastName = "Tavi",
+                    PhoneNumber = "+37512121212"
                 },
 
                 new User
                 {
                     Id = Guid.NewGuid(),
-                    First_name = "bob",
-                    Second_name = "Bobobi",
-                    Patronymic = "-",
-                    Tel_number = "0000"
+                    FirstName = "bob",
+                    SecondName = "Bobobi",
+                    LastName = "-",
+                    PhoneNumber = "0000"
                 },
 
             };

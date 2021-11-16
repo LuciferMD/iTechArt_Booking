@@ -60,12 +60,12 @@ namespace iTechArt_Booking.Web
 
             app.UseHttpsRedirection();
 
-            app.UseRouting();    // добавляем возможности маршрутизации
+            app.UseRouting();  
 
             app.UseAuthorization();
 
           
-            app.UseEndpoints(endpoints =>                 // устанавливаем адреса, которые будут обрабатываться
+            app.UseEndpoints(endpoints =>              
             {
                 endpoints.MapControllers();
             });

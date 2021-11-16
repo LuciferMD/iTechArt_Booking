@@ -9,10 +9,10 @@ namespace iTechArt_Booking.Domain.Models
     public class User
     {
         public Guid Id { get; set; }
-        public string First_name { get; set; }
-        public string Second_name { get; set; }
-        public string Patronymic { get; set; }
-        public string Tel_number { get; set; }
+        public string FirstName { get; set; }
+        public string SecondName { get; set; }
+        public string LastName { get; set; }    
+        public string PhoneNumber { get; set; }
     }
 
 }

@@ -38,10 +38,10 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
         {
             User curentItem = Get(updatedUser.Id);
             curentItem.Id = updatedUser.Id;
-            curentItem.First_name = updatedUser.First_name;
-            curentItem.Patronymic = updatedUser.Patronymic;
-            curentItem.Second_name = updatedUser.Second_name;
-            curentItem.Tel_number = updatedUser.Tel_number;
+            curentItem.FirstName = updatedUser.FirstName;
+            curentItem.LastName = updatedUser.LastName;
+            curentItem.SecondName = updatedUser.SecondName;
+            curentItem.PhoneNumber = updatedUser.PhoneNumber;
 
             Context.Users.Update(curentItem);
             Context.SaveChanges();
