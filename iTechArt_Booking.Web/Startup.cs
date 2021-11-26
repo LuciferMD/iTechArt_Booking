@@ -1,19 +1,15 @@
 using iTechArt_Booking.Domain.Interfaces;
+using iTechArt_Booking.Domain.Models;
 using iTechArt_Booking.Infastructure.Repositories.EFRepository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace iTechArt_Booking.Web
 {
@@ -30,17 +26,24 @@ namespace iTechArt_Booking.Web
         public void ConfigureServices(IServiceCollection services)
         {
 
-            //Domain
-            //services.AddScoped<UserService, UserService>();
-            //Infastructure
+          
             services.AddControllers();
 
-            services.AddDbContext<EFBookingDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+            services.AddDbContext<BookingDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+
+              //  .AddDefaultTokenProviders();
+
+
             services.AddTransient<IUserRepository, EFUserRepository>();
             services.AddTransient<IHotelRepository, EFHotelRepository>();
             services.AddTransient<IBookingRepository, EFBookingRepository>();
             services.AddTransient<IRoomRepository, EFRoomRepository>();
             services.AddTransient<IReviewRepository, EFReviewRepository>();
+
+            services.AddIdentityCore<User>()
+                .AddRoles<IdentityRole<Guid>>()
+                .AddEntityFrameworkStores<BookingDBContext>(); 
+                  ///.AddDefaultTokenProviders();
 
             services.AddSwaggerGen(c =>
             {
@@ -62,9 +65,8 @@ namespace iTechArt_Booking.Web
 
             app.UseRouting();  
 
-            app.UseAuthorization();
+         
 
-          
             app.UseEndpoints(endpoints =>              
             {
                 endpoints.MapControllers();

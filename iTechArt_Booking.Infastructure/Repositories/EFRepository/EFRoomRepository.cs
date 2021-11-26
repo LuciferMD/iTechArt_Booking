@@ -10,9 +10,9 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
 {
     public class EFRoomRepository : IRoomRepository
     {
-        private EFBookingDBContext Context;
+        private BookingDBContext Context;
 
-        public EFRoomRepository(EFBookingDBContext context)
+        public EFRoomRepository(BookingDBContext context)
         {
             Context = context;
         }

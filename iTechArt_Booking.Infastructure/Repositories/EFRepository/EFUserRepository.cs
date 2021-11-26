@@ -11,9 +11,9 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
 {
     public class EFUserRepository : IUserRepository
     {
-        private EFBookingDBContext Context;
+        private BookingDBContext Context;
 
-        public EFUserRepository(EFBookingDBContext context)
+        public EFUserRepository(BookingDBContext context)
         {
             Context = context;
         }
