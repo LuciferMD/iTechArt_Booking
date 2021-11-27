@@ -31,7 +31,7 @@ namespace iTechArt_Booking.Web
 
             services.AddDbContext<BookingDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
 
-              //  .AddDefaultTokenProviders();
+              
 
 
             services.AddTransient<IUserRepository, EFUserRepository>();
