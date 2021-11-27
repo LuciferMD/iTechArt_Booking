@@ -42,8 +42,8 @@ namespace iTechArt_Booking.Web
 
             services.AddIdentityCore<User>()
                 .AddRoles<IdentityRole<Guid>>()
-                .AddEntityFrameworkStores<BookingDBContext>(); 
-                  ///.AddDefaultTokenProviders();
+                .AddEntityFrameworkStores<BookingDBContext>();
+                //.AddDefaultTokenProviders();
 
             services.AddSwaggerGen(c =>
             {
