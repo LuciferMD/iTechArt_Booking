@@ -1,6 +1,7 @@
 ﻿using iTechArt_Booking.Application.Services;
 using iTechArt_Booking.Domain.Interfaces;
 using iTechArt_Booking.Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -43,6 +44,7 @@ namespace iTechArt_Booking.WebUI.Controllers
             return new ObjectResult(hotel);
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Create([FromBody] Hotel hotel)
         {
@@ -55,6 +57,7 @@ namespace iTechArt_Booking.WebUI.Controllers
             
         }
 
+        [Authorize]
         [HttpPut("{id}")] //to do
         public IActionResult Update(Guid id,[FromBody] Hotel updatedHotel)
         {
@@ -74,6 +77,7 @@ namespace iTechArt_Booking.WebUI.Controllers
             return RedirectToRoute("GetAllHotels");
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {

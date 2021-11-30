@@ -1,8 +1,9 @@
-﻿
+﻿    
 using iTechArt_Booking.Domain.Interfaces;
 using iTechArt_Booking.Domain.Models;
 using iTechArt_Booking.Infastructure.Repositories.Fakes;
 using iTechArt_Bookingю.Application.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -26,6 +27,7 @@ namespace iTechArt_Booking.WebUI.Controllers
             BookingRepository = bookingRepository;
         }
 
+        
         [HttpGet(Name = "GetAllBooking")]
         public IEnumerable<Booking> GetAll()
         {
@@ -44,7 +46,7 @@ namespace iTechArt_Booking.WebUI.Controllers
             return new ObjectResult(booking);
         }
 
-
+        [Authorize]
         [HttpPost]
         public IActionResult Create([FromBody] Booking booking)
         {
@@ -56,6 +58,8 @@ namespace iTechArt_Booking.WebUI.Controllers
             return CreatedAtRoute("GetBooking", new { id = booking.Id }, booking);
         }
 
+
+        [Authorize]
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {

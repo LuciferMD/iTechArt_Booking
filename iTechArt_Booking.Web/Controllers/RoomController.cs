@@ -1,5 +1,6 @@
 ﻿using iTechArt_Booking.Domain.Interfaces;
 using iTechArt_Booking.Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -26,6 +27,7 @@ namespace iTechArt_Booking.WebUI.Controllers
             return RoomRepository.GetAll();
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Create([FromBody]Room room)
         {

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using iTechArt_Booking.Domain.Services;
 using iTechArt_Booking.Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace iTechArt_Booking.WebUI.Controllers
 {
@@ -40,7 +41,9 @@ namespace iTechArt_Booking.WebUI.Controllers
             return new ObjectResult(user);
         }
 
-        [HttpPost]
+
+        [Authorize]
+        [HttpPost]   
         public IActionResult Create ([FromBody] User user)
         {
             if(user==null)
@@ -51,6 +54,8 @@ namespace iTechArt_Booking.WebUI.Controllers
             return CreatedAtRoute("GetUser", new { Id = user.Id }, user);
         }
 
+
+        [Authorize]
         [HttpPut("{id}", Name = "UpdateUser")] // to do
         public IActionResult Update (Guid id,[FromBody] User updatedUser)
         {
@@ -69,6 +74,7 @@ namespace iTechArt_Booking.WebUI.Controllers
             return RedirectToRoute("GetAllItems");
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public IActionResult Delete (Guid id)
         {
