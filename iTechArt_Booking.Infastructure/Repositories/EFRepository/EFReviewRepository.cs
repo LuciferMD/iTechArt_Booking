@@ -22,9 +22,29 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
             Context.SaveChanges();
         }
 
+        public Review Get(Guid id)
+        {
+            return Context.Reviews.Find(id);
+
+        }
+
         public IEnumerable<Review> GetAll()
         {
             return Context.Reviews;
+        }
+
+
+        public Review Delete(Guid id)
+        {
+            Review review = Get(id);
+
+            if (review != null)
+            {
+                Context.Reviews.Remove(review);
+                Context.SaveChanges();
+            }
+
+            return review;
         }
     }
 }

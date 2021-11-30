@@ -11,6 +11,10 @@ namespace iTechArt_Booking.Domain.Interfaces
     {
         IEnumerable<Review> GetAll();
 
+        Review Get(Guid id);
+
         void Create(Review review);
+
+        Review Delete(Guid id);
     }
 }

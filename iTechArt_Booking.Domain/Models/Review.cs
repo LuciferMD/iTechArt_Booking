@@ -14,6 +14,7 @@ namespace iTechArt_Booking.Domain.Models
 
         public Guid HotelId { get; set; }
 
+
         public string Text { get; set; }
 
     }
