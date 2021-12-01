@@ -27,11 +27,14 @@ namespace iTechArt_Booking.WebUI.Controllers
         }
 
 
+        [Authorize]
         [HttpGet(Name ="GetAllHotels")]
         public IEnumerable<Hotel> GetAll()
         {
             return HotelRepository.GetAll();
         }
+
+
 
         [HttpGet("{id}",Name ="GetHotel")]
         public IActionResult Get(Guid id)
@@ -43,6 +46,7 @@ namespace iTechArt_Booking.WebUI.Controllers
             }
             return new ObjectResult(hotel);
         }
+
 
         [Authorize]
         [HttpPost]
@@ -56,6 +60,8 @@ namespace iTechArt_Booking.WebUI.Controllers
             return CreatedAtRoute("GetHotel", new { id = hotel.Id }, hotel);
             
         }
+
+
 
         [Authorize]
         [HttpPut("{id}")] //to do
@@ -91,5 +97,15 @@ namespace iTechArt_Booking.WebUI.Controllers
             return new ObjectResult(deletedHotel);
         }
 
+        
+        [Authorize]
+        [HttpGet("{HotelId}/rooms",Name = "GetFreeRooms")]
+        public IActionResult GetFreeRooms(Guid HotelId)
+        {   
+            var rooms = HotelRepository.GetFreeRooms(HotelId, DateTime.Now);
+
+            return new ObjectResult(rooms);
+        }
+        
     }
 }

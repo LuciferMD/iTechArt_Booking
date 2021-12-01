@@ -58,7 +58,6 @@ namespace iTechArt_Booking.WebUI.Controllers
             return CreatedAtRoute("GetBooking", new { id = booking.Id }, booking);
         }
 
-
         [Authorize]
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)

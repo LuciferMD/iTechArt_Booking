@@ -16,5 +16,7 @@ namespace iTechArt_Booking.Domain.Interfaces
 
         Booking Delete(Guid id);
 
+
+
     }
 }

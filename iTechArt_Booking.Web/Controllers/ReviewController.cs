@@ -21,6 +21,8 @@ namespace iTechArt_Booking.WebUI.Controllers
             ReviewRepository = reviewRepository;
         }
 
+
+        [Authorize]
         [HttpGet(Name = "GetAllReview")]
         public IEnumerable<Review> GetAll()
         {
@@ -29,7 +31,7 @@ namespace iTechArt_Booking.WebUI.Controllers
         }
 
 
-
+        [Authorize]
         [HttpGet("{id}", Name = "GetReview")]
         public IActionResult Get(Guid id)
         {

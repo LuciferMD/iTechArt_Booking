@@ -17,7 +17,9 @@ namespace iTechArt_Booking.Domain.Interfaces
 
          void Update(Hotel hotel);
 
-         Hotel Delete(Guid id); 
+         Hotel Delete(Guid id);
+
+         IEnumerable<Room> GetFreeRooms(Guid id, DateTime date);
     }
 
  }
