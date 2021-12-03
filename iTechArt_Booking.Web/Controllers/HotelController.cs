@@ -100,9 +100,9 @@ namespace iTechArt_Booking.WebUI.Controllers
         
         [Authorize]
         [HttpGet("{HotelId}/rooms",Name = "GetFreeRooms")]
-        public IActionResult GetFreeRooms(Guid HotelId)
+        public IActionResult GetFreeRooms(Guid HotelId , DateTime startDate, DateTime endDate)
         {   
-            var rooms = HotelRepository.GetFreeRooms(HotelId, DateTime.Now);
+            var rooms = HotelRepository.GetFreeRooms(HotelId,startDate , endDate);
 
             return new ObjectResult(rooms);
         }

@@ -59,19 +59,19 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
             return hotel;
         }
         
-        public IEnumerable<Room> GetFreeRooms(Guid hotelId, DateTime date)
+        public IEnumerable<Room> GetFreeRooms(Guid hotelId, DateTime startDate, DateTime endDate)
         {
             
             Hotel hotel = Get(hotelId);
 
             if (hotel == null) //to services
             {
-             //throw new Exception("There isn't such hotel!");        
+             throw new Exception("There isn't such hotel!");        
             }
 
             IEnumerable<Room> freeRooms = Context.Rooms.Where(r=>r.HotelId== hotelId);
             List<Guid> guids = freeRooms.Select(r => r.Id).ToList();
-            List<Guid> bookedGuids =  Context.Booking.Where(b => guids.Contains(b.RoomId) && b.StartDate <= date && b.EndDate >= date).Select(b=>b.RoomId).ToList();
+            List<Guid> bookedGuids =  Context.Booking.Where(b => guids.Contains(b.RoomId) && b.StartDate <= startDate && b.EndDate >= endDate).Select(b=>b.RoomId).ToList();
             var freeGuids = guids.Except(bookedGuids);
             freeRooms = Context.Rooms.Where(r => freeGuids.Contains(r.Id));
 

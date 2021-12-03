@@ -19,7 +19,7 @@ namespace iTechArt_Booking.Domain.Interfaces
 
          Hotel Delete(Guid id);
 
-         IEnumerable<Room> GetFreeRooms(Guid id, DateTime date);
+         IEnumerable<Room> GetFreeRooms(Guid id, DateTime startDate, DateTime  endTime);
     }
 
  }
