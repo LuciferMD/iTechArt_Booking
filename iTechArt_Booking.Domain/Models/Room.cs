@@ -11,8 +11,8 @@ namespace iTechArt_Booking.Domain.Models
         public Guid Id { get; set; }
         public string Category { get; set; }
 
-        public float CostPerDay { get; set; }
-        public long NumberOfBeds { get; set; }
+        public decimal CostPerDay { get; set; }
+        public byte NumberOfBeds { get; set; }
 
         public Guid HotelId { get; set; }
     }
