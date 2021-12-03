@@ -106,6 +106,17 @@ namespace iTechArt_Booking.WebUI.Controllers
 
             return new ObjectResult(rooms);
         }
-        
+
+        [Authorize]
+        [HttpGet("{id}/reviews", Name = "GetHotelReviews")]
+
+        public IActionResult HotelReviews(Guid id)
+        {
+            var reviews = HotelRepository.HotelReviews(id);
+
+            return new ObjectResult(reviews);
+        }
+
+
     }
 }

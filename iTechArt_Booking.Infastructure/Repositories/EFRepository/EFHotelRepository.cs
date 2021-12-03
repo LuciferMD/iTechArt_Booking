@@ -78,5 +78,17 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
             return freeRooms;
             
         }
+
+        public IEnumerable<Review> HotelReviews(Guid id)
+        {
+            Hotel hotel = Get(id);
+
+            if (hotel == null) 
+            {
+                throw new Exception("There isn't such hotel!");
+            }
+
+            return Context.Reviews.Where(r => r.HotelId == id);
+        }
     }
 }
