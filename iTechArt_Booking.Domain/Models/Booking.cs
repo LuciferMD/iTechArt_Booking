@@ -15,6 +15,7 @@ namespace iTechArt_Booking.Domain.Models
         public Guid RoomId { get; set; }
 
         public char Status { get; set; }
+        public DateTime CreationDate { get; set;}
         public DateTime StartDate {get;set;}
         public DateTime EndDate { get; set; }
     }

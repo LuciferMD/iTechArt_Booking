@@ -17,6 +17,8 @@ namespace iTechArt_Booking.Domain.Models
 
         public string Description { get; set; }
 
+
+
        
     }
 }

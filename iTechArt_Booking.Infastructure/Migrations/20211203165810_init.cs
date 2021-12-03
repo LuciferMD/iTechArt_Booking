@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace iTechArt_Booking.Infastructure.Migrations
 {
-    public partial class v1 : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -57,6 +57,7 @@ namespace iTechArt_Booking.Infastructure.Migrations
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     RoomId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Status = table.Column<string>(type: "nvarchar(1)", nullable: false),
+                    CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -100,8 +101,8 @@ namespace iTechArt_Booking.Infastructure.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Category = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CostPerDay = table.Column<float>(type: "real", nullable: false),
-                    NumberOfBeds = table.Column<long>(type: "bigint", nullable: false),
+                    CostPerDay = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    NumberOfBeds = table.Column<byte>(type: "tinyint", nullable: false),
                     HotelId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>

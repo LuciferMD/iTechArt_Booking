@@ -10,8 +10,8 @@ using iTechArt_Booking.Infastructure.Repositories.EFRepository;
 namespace iTechArt_Booking.Infastructure.Migrations
 {
     [DbContext(typeof(BookingDBContext))]
-    [Migration("20211203164536_Rooms")]
-    partial class Rooms
+    [Migration("20211203165810_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -155,6 +155,9 @@ namespace iTechArt_Booking.Infastructure.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");

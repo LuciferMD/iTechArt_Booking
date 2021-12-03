@@ -10,8 +10,8 @@ using iTechArt_Booking.Infastructure.Repositories.EFRepository;
 namespace iTechArt_Booking.Infastructure.Migrations
 {
     [DbContext(typeof(BookingDBContext))]
-    [Migration("20211126215658_v1")]
-    partial class v1
+    [Migration("20211203170032_init1")]
+    partial class init1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -156,6 +156,9 @@ namespace iTechArt_Booking.Infastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
@@ -229,14 +232,14 @@ namespace iTechArt_Booking.Infastructure.Migrations
                     b.Property<string>("Category")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("CostPerDay")
-                        .HasColumnType("real");
+                    b.Property<decimal>("CostPerDay")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<Guid>("HotelId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<long>("NumberOfBeds")
-                        .HasColumnType("bigint");
+                    b.Property<byte>("NumberOfBeds")
+                        .HasColumnType("tinyint");
 
                     b.HasKey("Id");
 
