@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 
 namespace iTechArt_Booking.Domain.Models
 {
+
+    public enum Category {Standart, Vip, President }
      public class Room
     {
         public Guid Id { get; set; }
-        public string Category { get; set; }
+        public Category Category { get; set; }
 
         [Column(TypeName = "decimal(18, 2)")]
         public decimal CostPerDay { get; set; }
