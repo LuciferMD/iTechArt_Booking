@@ -18,12 +18,12 @@ namespace iTechArt_Booking.WebUI.Controllers
     {
         //   private readonly HotelService hotelService = new Booking(new HotelFakeRepository());
 
-        IHotelRepository HotelRepository;
+        HotelService hotelService;
 
 
-        public HotelController (IHotelRepository hotelRepository)
+        public HotelController (HotelService _hotelService)
         {
-            HotelRepository = hotelRepository;
+            hotelService = _hotelService;
         }
 
 
@@ -31,7 +31,7 @@ namespace iTechArt_Booking.WebUI.Controllers
         [HttpGet(Name ="GetAllHotels")]
         public IEnumerable<Hotel> GetAll()
         {
-            return HotelRepository.GetAll();
+            return hotelService.GetAll();
         }
 
 
@@ -39,7 +39,7 @@ namespace iTechArt_Booking.WebUI.Controllers
         [HttpGet("{id}",Name ="GetHotel")]
         public IActionResult Get(Guid id)
         {
-            Hotel hotel = HotelRepository.Get(id);
+            Hotel hotel = hotelService.Get(id);
             if (hotel == null)
             {
                 return NotFound();
@@ -56,7 +56,7 @@ namespace iTechArt_Booking.WebUI.Controllers
             {
                 return BadRequest();
             }
-            HotelRepository.Create(hotel);
+            hotelService.Create(hotel);
             return CreatedAtRoute("GetHotel", new { id = hotel.Id }, hotel);
             
         }
@@ -72,14 +72,14 @@ namespace iTechArt_Booking.WebUI.Controllers
                 return BadRequest();
             }
 
-            var hotel = HotelRepository.Get(id);
+            var hotel = hotelService.Get(id);
 
             if (hotel == null)
             {
                 return NotFound();
             }
 
-            HotelRepository.Update(hotel);
+            hotelService.Update(hotel);
             return RedirectToRoute("GetAllHotels");
         }
 
@@ -87,7 +87,7 @@ namespace iTechArt_Booking.WebUI.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
-            var deletedHotel = HotelRepository.Delete(id);
+            var deletedHotel = hotelService.Delete(id);
 
             if (deletedHotel == null)
             {
@@ -102,7 +102,7 @@ namespace iTechArt_Booking.WebUI.Controllers
         [HttpGet("{HotelId}/rooms",Name = "GetFreeRooms")]
         public IActionResult GetFreeRooms(Guid HotelId , DateTime startDate, DateTime endDate)
         {   
-            var rooms = HotelRepository.GetFreeRooms(HotelId,startDate , endDate);
+            var rooms = hotelService.GetFreeRooms(HotelId,startDate , endDate);
 
             return new ObjectResult(rooms);
         }
@@ -112,7 +112,7 @@ namespace iTechArt_Booking.WebUI.Controllers
 
         public IActionResult HotelReviews(Guid id)
         {
-            var reviews = HotelRepository.HotelReviews(id);
+            var reviews = hotelService.HotelReviews(id);
 
             return new ObjectResult(reviews);
         }

@@ -1,4 +1,5 @@
-﻿using iTechArt_Booking.Domain.Interfaces;
+﻿using iTechArt_Booking.Application.Services;
+using iTechArt_Booking.Domain.Interfaces;
 using iTechArt_Booking.Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -14,17 +15,17 @@ namespace iTechArt_Booking.WebUI.Controllers
     [ApiController]
     public class RoomController : Controller
     {
-        IRoomRepository RoomRepository;
+        RoomService roomService;
 
-        public RoomController (IRoomRepository roomRepository)
+        public RoomController (RoomService _roomService)
         {
-            RoomRepository = roomRepository;
+            roomService = _roomService;
         }
 
         [HttpGet(Name ="GetAllRooms")]
         public IEnumerable<Room> GetAll()
         {
-            return RoomRepository.GetAll();
+            return roomService.GetAll();
         }
 
         [Authorize]
@@ -35,7 +36,7 @@ namespace iTechArt_Booking.WebUI.Controllers
             {
                 return BadRequest();
             }
-            RoomRepository.Create(room);
+            roomService.Create(room);
             return CreatedAtRoute("GetUser", new { Id = room.Id }, room);     
 
         }

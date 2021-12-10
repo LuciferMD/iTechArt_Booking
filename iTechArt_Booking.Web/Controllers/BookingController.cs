@@ -1,8 +1,8 @@
-﻿    
+﻿
+using iTechArt_Booking.Application.Services;
 using iTechArt_Booking.Domain.Interfaces;
 using iTechArt_Booking.Domain.Models;
 using iTechArt_Booking.Infastructure.Repositories.Fakes;
-using iTechArt_Bookingю.Application.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,24 +20,24 @@ namespace iTechArt_Booking.WebUI.Controllers
         //   private readonly BookingService bookingService = new BookingService(new BookingFakeRepository());
 
 
-        IBookingRepository BookingRepository;
+        BookingService bookingService;
 
-        public BookingController(IBookingRepository bookingRepository)
+        public BookingController(BookingService _bookingService)
         {
-            BookingRepository = bookingRepository;
+            bookingService = _bookingService;
         }
 
         
         [HttpGet(Name = "GetAllBooking")]
         public IEnumerable<Booking> GetAll()
         {
-            return BookingRepository.GetAll();
+            return bookingService.GetAll();
         }
 
         [HttpGet("{id}", Name ="GetBooking")]
         public IActionResult Get(Guid id)
         {
-            Booking booking = BookingRepository.Get(id);
+            Booking booking = bookingService.Get(id);
             if(booking == null)
             {
                 return BadRequest();
@@ -54,7 +54,7 @@ namespace iTechArt_Booking.WebUI.Controllers
             {
                 return BadRequest();
             }
-            BookingRepository.Create(booking);
+            bookingService.Create(booking);
             return CreatedAtRoute("GetBooking", new { id = booking.Id }, booking);
         }
 
@@ -62,7 +62,7 @@ namespace iTechArt_Booking.WebUI.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
-            var deletedBooking = BookingRepository.Get(id);
+            var deletedBooking = bookingService.Get(id);
             if (deletedBooking == null)
             {
                 return BadRequest();

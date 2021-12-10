@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace iTechArt_Booking.Application.Services
 {
-    class ReviewService : IReviewRepository
+    public class ReviewService : IReviewRepository
     {
         public readonly IReviewRepository reviewRepository;
 

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace iTechArt_Bookingю.Application.Services
+namespace iTechArt_Booking.Application.Services
 {
     public class BookingService : IBookingRepository
     {

@@ -1,4 +1,5 @@
-﻿using iTechArt_Booking.Domain.Interfaces;
+﻿using iTechArt_Booking.Application.Services;
+using iTechArt_Booking.Domain.Interfaces;
 using iTechArt_Booking.Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -14,11 +15,11 @@ namespace iTechArt_Booking.WebUI.Controllers
     [ApiController]
     public class ReviewController : Controller
     {
-        IReviewRepository ReviewRepository;
+        ReviewService reviewService;
 
-        public ReviewController(IReviewRepository reviewRepository)
+        public ReviewController(ReviewService _reviewService)
         {
-            ReviewRepository = reviewRepository;
+            reviewService = _reviewService;
         }
 
 
@@ -26,7 +27,7 @@ namespace iTechArt_Booking.WebUI.Controllers
         [HttpGet(Name = "GetAllReview")]
         public IEnumerable<Review> GetAll()
         {
-            return ReviewRepository.GetAll();
+            return reviewService.GetAll();
 
         }
 
@@ -35,7 +36,7 @@ namespace iTechArt_Booking.WebUI.Controllers
         [HttpGet("{id}", Name = "GetReview")]
         public IActionResult Get(Guid id)
         {
-            Review review = ReviewRepository.Get(id);
+            Review review = reviewService.Get(id);
             if (review == null)
             {
                 return NotFound();
@@ -53,7 +54,7 @@ namespace iTechArt_Booking.WebUI.Controllers
                 return BadRequest();
             }
 
-            ReviewRepository.Create(review);
+            reviewService.Create(review);
             return CreatedAtRoute("GetReview", new { Id = review.Id }, review);
         }
 
@@ -61,7 +62,7 @@ namespace iTechArt_Booking.WebUI.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete (Guid id)
         {
-            var deletedReview = ReviewRepository.Delete(id);
+            var deletedReview = reviewService.Delete(id);
 
             if (deletedReview == null)
             {

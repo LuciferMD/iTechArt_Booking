@@ -13,6 +13,8 @@ using System;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using iTechArt_Booking.Application.Services;
+
 
 namespace iTechArt_Booking.Web
 {
@@ -36,11 +38,20 @@ namespace iTechArt_Booking.Web
 
              
 
-            services.AddTransient<IUserRepository, EFUserRepository>();
+            services.AddScoped<IUserRepository, EFUserRepository>();
+            services.AddScoped<UserService>();
+
             services.AddTransient<IHotelRepository, EFHotelRepository>();
+            services.AddTransient<HotelService>();
+
             services.AddTransient<IBookingRepository, EFBookingRepository>();
+            services.AddTransient<BookingService>();
+
             services.AddTransient<IRoomRepository, EFRoomRepository>();
+            services.AddTransient<RoomService>();
+
             services.AddTransient<IReviewRepository, EFReviewRepository>();
+            services.AddTransient<ReviewService>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(
                 options =>

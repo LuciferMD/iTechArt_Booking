@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace iTechArt_Booking.Domain.Services
+namespace iTechArt_Booking.Application.Services
 {
     public class UserService: IUserRepository
     {

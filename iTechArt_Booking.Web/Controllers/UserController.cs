@@ -5,9 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using iTechArt_Booking.Domain.Services;
 using iTechArt_Booking.Domain.Models;
 using Microsoft.AspNetCore.Authorization;
+using iTechArt_Booking.Application.Services;
 
 namespace iTechArt_Booking.WebUI.Controllers
 {
@@ -15,24 +15,24 @@ namespace iTechArt_Booking.WebUI.Controllers
     [ApiController]
     public class UserController : Controller
     {
-        IUserRepository UserRepository;
+        UserService userService;
 
-        public UserController(IUserRepository userRepository)
+        public UserController(UserService _userService)
         {
-            UserRepository = userRepository;
+            userService = _userService;
         }
 
         [HttpGet(Name = "GetAllUsers")]
         public IEnumerable<User> GetAll()
         {
-            return UserRepository.GetAll();
+            return userService.GetAll();
         }
 
 
         [HttpGet("{id}",Name ="GetUser")]
         public IActionResult Get(Guid id)
         {
-            User user = UserRepository.Get(id);
+            User user = userService.Get(id);
             if(user == null)
             {
                 return NotFound();
@@ -50,7 +50,7 @@ namespace iTechArt_Booking.WebUI.Controllers
             {
                 return BadRequest();
             }
-            UserRepository.Create(user);
+            userService.Create(user);
             return CreatedAtRoute("GetUser", new { Id = user.Id }, user);
         }
 
@@ -64,13 +64,13 @@ namespace iTechArt_Booking.WebUI.Controllers
                 return BadRequest();
             }
 
-            var user = UserRepository.Get(id);
+            var user = userService.Get(id);
             if (user == null)
             {
                 return NotFound();
             }
 
-            UserRepository.Update(updatedUser);
+            userService.Update(updatedUser);
             return RedirectToRoute("GetAllItems");
         }
 
@@ -79,7 +79,7 @@ namespace iTechArt_Booking.WebUI.Controllers
         public IActionResult Delete (Guid id)
         {
 
-            var deletedUser = UserRepository.Delete(id);
+            var deletedUser = userService.Delete(id);
 
             if (deletedUser == null)
             {
