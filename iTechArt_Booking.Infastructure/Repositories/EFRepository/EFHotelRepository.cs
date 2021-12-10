@@ -71,6 +71,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
 
             IEnumerable<Room> freeRooms = Context.Rooms.Where(r=>r.HotelId== hotelId);
             List<Guid> guids = freeRooms.Select(r => r.Id).ToList();
+            
             List<Guid> bookedGuids =  Context.Booking.Where(b => guids.Contains(b.RoomId) && b.StartDate <= startDate && b.EndDate >= endDate).Select(b=>b.RoomId).ToList();
             var freeGuids = guids.Except(bookedGuids);
             freeRooms = Context.Rooms.Where(r => freeGuids.Contains(r.Id));

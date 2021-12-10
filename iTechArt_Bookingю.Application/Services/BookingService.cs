@@ -9,13 +9,28 @@ using System.Threading.Tasks;
 
 namespace iTechArt_Bookingю.Application.Services
 {
-    public class BookingService
+    public class BookingService : IBookingRepository
     {
         public readonly IBookingRepository bookingRepository;
 
         public BookingService(IBookingRepository _bookingRepository)
         {
             bookingRepository = _bookingRepository ?? throw new ArgumentNullException(nameof(bookingRepository));
+        }
+
+        public void Create(Booking booking)
+        {
+            bookingRepository.Create(booking);
+        }
+
+        public Booking Delete(Guid id)
+        {
+            return bookingRepository.Delete(id);
+        }
+
+        public Booking Get(Guid id)
+        {
+            return bookingRepository.Get(id);
         }
 
         public IEnumerable<Booking> GetAll()

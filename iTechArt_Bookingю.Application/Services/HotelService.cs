@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace iTechArt_Booking.Application.Services
 {
-    public class HotelService
+    public class HotelService: IHotelRepository 
     {
         private readonly IHotelRepository hotelRepository;
 
@@ -16,10 +16,40 @@ namespace iTechArt_Booking.Application.Services
         {
             hotelRepository = _hotelRepository ?? throw new ArgumentNullException(nameof(hotelRepository));
         }
-
         public IEnumerable<Hotel> GetAll()
         {
             return hotelRepository.GetAll();
         }
+        public Hotel Get(Guid id)
+        {
+            return hotelRepository.Get(id);
+        }
+
+        public void Create(Hotel hotel)
+        {
+             hotelRepository.Create(hotel);
+        }
+
+        public Hotel Delete(Guid id)
+        {
+            return hotelRepository.Delete(id);
+        }
+
+        public void Update(Hotel hotel)
+        {
+           hotelRepository.Update(hotel);
+        }
+
+
+        public IEnumerable<Room> GetFreeRooms(Guid id, DateTime startDate, DateTime endTime)
+        {
+            return hotelRepository.GetFreeRooms(id, startDate, endTime);
+        }
+
+        public IEnumerable<Review> HotelReviews(Guid id)
+        {
+            return hotelRepository.HotelReviews(id);
+        }
+         
     }
 }

@@ -17,6 +17,7 @@ namespace iTechArt_Booking.Domain.Models
 
         public byte NumberOfBeds { get; set; }
 
+        [ForeignKey("HotelFK")]
         public Guid HotelId { get; set; }
     }
 }

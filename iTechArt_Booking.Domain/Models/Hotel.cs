@@ -17,7 +17,7 @@ namespace iTechArt_Booking.Domain.Models
 
         public string Description { get; set; }
 
-
+     ///   public IEnumerable<Room> Rooms {get;set;}
 
        
     }
