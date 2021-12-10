@@ -61,7 +61,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
         
         public IEnumerable<Room> GetFreeRooms(Guid hotelId, DateTime startDate, DateTime endDate)
         {
-            
+            /*
             Hotel hotel = Get(hotelId);
 
             if (hotel == null) //to services
@@ -77,7 +77,8 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
             freeRooms = Context.Rooms.Where(r => freeGuids.Contains(r.Id));
 
             return freeRooms;
-            
+            */
+            return null;
         }
 
         public IEnumerable<Review> HotelReviews(Guid id)

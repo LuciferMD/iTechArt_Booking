@@ -12,6 +12,8 @@ namespace iTechArt_Booking.Domain.Models
         public string FirstName { get; set; }
         public string SecondName { get; set; }
         public string LastName { get; set; }    
+
+        public IEnumerable<Booking> Bookings { get; set; } //navigation properties
     }
 
 }

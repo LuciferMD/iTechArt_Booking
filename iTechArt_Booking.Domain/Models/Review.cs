@@ -11,6 +11,7 @@ namespace iTechArt_Booking.Domain.Models
     {
         public Guid Id { get; set; }
 
+        [ForeignKey("UserId")]
         public Guid UserId { get; set; }
 
         [ForeignKey("HotelId")]

@@ -11,11 +11,8 @@ namespace iTechArt_Booking.Domain.Models
     {
         public Guid Id { get; set; }
 
-        [ForeignKey("UserId")]
-        public Guid UserId { get; set; }
-
-        [ForeignKey("RoomId")]
-        public Guid RoomId { get; set; }
+        public User User { get; set; } //navigation properties
+        public IEnumerable<Room> Rooms { get; set; } //navigation properties
 
         public char Status { get; set; }
         public DateTime CreationDate { get; set;}

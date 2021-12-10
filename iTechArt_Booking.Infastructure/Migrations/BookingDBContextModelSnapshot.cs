@@ -160,9 +160,6 @@ namespace iTechArt_Booking.Infastructure.Migrations
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("RoomId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
@@ -170,10 +167,12 @@ namespace iTechArt_Booking.Infastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(1)");
 
-                    b.Property<Guid>("UserId")
+                    b.Property<Guid?>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Booking");
                 });
@@ -218,6 +217,8 @@ namespace iTechArt_Booking.Infastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("HotelId");
+
                     b.ToTable("Reviews");
                 });
 
@@ -225,6 +226,9 @@ namespace iTechArt_Booking.Infastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("BookingId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Category")
@@ -240,6 +244,10 @@ namespace iTechArt_Booking.Infastructure.Migrations
                         .HasColumnType("tinyint");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BookingId");
+
+                    b.HasIndex("HotelId");
 
                     b.ToTable("Rooms");
                 });
@@ -368,6 +376,54 @@ namespace iTechArt_Booking.Infastructure.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("iTechArt_Booking.Domain.Models.Booking", b =>
+                {
+                    b.HasOne("iTechArt_Booking.Domain.Models.User", "User")
+                        .WithMany("Bookings")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("iTechArt_Booking.Domain.Models.Review", b =>
+                {
+                    b.HasOne("iTechArt_Booking.Domain.Models.Hotel", null)
+                        .WithMany("Reviews")
+                        .HasForeignKey("HotelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("iTechArt_Booking.Domain.Models.Room", b =>
+                {
+                    b.HasOne("iTechArt_Booking.Domain.Models.Booking", null)
+                        .WithMany("Rooms")
+                        .HasForeignKey("BookingId");
+
+                    b.HasOne("iTechArt_Booking.Domain.Models.Hotel", null)
+                        .WithMany("Rooms")
+                        .HasForeignKey("HotelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("iTechArt_Booking.Domain.Models.Booking", b =>
+                {
+                    b.Navigation("Rooms");
+                });
+
+            modelBuilder.Entity("iTechArt_Booking.Domain.Models.Hotel", b =>
+                {
+                    b.Navigation("Reviews");
+
+                    b.Navigation("Rooms");
+                });
+
+            modelBuilder.Entity("iTechArt_Booking.Domain.Models.User", b =>
+                {
+                    b.Navigation("Bookings");
                 });
 #pragma warning restore 612, 618
         }
