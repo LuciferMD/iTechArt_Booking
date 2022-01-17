@@ -10,13 +10,8 @@ namespace iTechArt_Booking.Domain.Models
     public class Review
     {
         public Guid Id { get; set; }
-
-        [ForeignKey("UserId")]
-        public Guid UserId { get; set; }
-
-        [ForeignKey("HotelId")]
-        public Guid HotelId { get; set; }
-
+        public User Author { get; set; }
+        public Hotel Hotel { get; set; }
         public string Text { get; set; }
 
     }

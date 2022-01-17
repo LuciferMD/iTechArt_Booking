@@ -62,23 +62,24 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
         public IEnumerable<Room> GetFreeRooms(Guid hotelId, DateTime startDate, DateTime endDate)
         {
             /*
-            Hotel hotel = Get(hotelId);
+             Hotel hotel = Get(hotelId);
 
-            if (hotel == null) //to services
-            {
-             throw new Exception("There isn't such hotel!");        
-            }
+             if (hotel == null) //to services
+             {
+              throw new Exception("There isn't such hotel!");        
+             }
 
-            IEnumerable<Room> freeRooms = Context.Rooms.Where(r=>r.HotelId== hotelId);
-            List<Guid> guids = freeRooms.Select(r => r.Id).ToList();
-            
-            List<Guid> bookedGuids =  Context.Booking.Where(b => guids.Contains(b.RoomId) && b.StartDate <= startDate && b.EndDate >= endDate).Select(b=>b.RoomId).ToList();
-            var freeGuids = guids.Except(bookedGuids);
-            freeRooms = Context.Rooms.Where(r => freeGuids.Contains(r.Id));
+             IEnumerable<Room> freeRooms = Context.Rooms.Where(r=>r.HotelId== hotelId);
+             List<Guid> guids = freeRooms.Select(r => r.Id).ToList();
 
-            return freeRooms;
-            */
+             List<Guid> bookedGuids =  Context.Booking.Where(b => guids.Contains(b.RoomId) && b.StartDate <= startDate && b.EndDate >= endDate).Select(b=>b.RoomId).ToList();
+             var freeGuids = guids.Except(bookedGuids);
+             freeRooms = Context.Rooms.Where(r => freeGuids.Contains(r.Id));
+
+             return freeRooms;
+             */
             return null;
+            
         }
 
         public IEnumerable<Review> HotelReviews(Guid id)
@@ -90,7 +91,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
                 throw new Exception("There isn't such hotel!");
             }
 
-            return Context.Reviews.Where(r => r.HotelId == id);
+            return Context.Reviews.Where(r => r.Hotel.Id == id);
         }
     }
 }

@@ -19,7 +19,7 @@ namespace iTechArt_Booking.Domain.Models
         public Guid Id { get; set; }
 
         public User User { get; set; } //navigation properties
-        public IEnumerable<Room> Rooms { get; set; } //navigation properties
+        public Room Room { get; set; } //navigation properties
         public Status Status { get; set; }
         public DateTime CreationDate { get; set;}
         public DateTime StartDate {get;set;}

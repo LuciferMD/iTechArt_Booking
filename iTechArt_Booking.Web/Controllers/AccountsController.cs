@@ -29,12 +29,9 @@ namespace iTechArt_Booking.WebUI.Controllers
         {
             var user = new User()
             {
+                FirstName = regModel.FirstName,
                 Email = regModel.Email,
                 UserName = regModel.FirstName,
-                FirstName = regModel.FirstName,
-                LastName = regModel.LastName,
-                SecondName = regModel.SecondName,
-                PhoneNumber = regModel.PhoneNumber
             };
 
             var result = await userManager.CreateAsync(user, regModel.Password);

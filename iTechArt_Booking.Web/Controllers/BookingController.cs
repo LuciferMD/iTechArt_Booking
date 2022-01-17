@@ -3,7 +3,6 @@
 using iTechArt_Booking.Application.Services;
 using iTechArt_Booking.Domain.Interfaces;
 using iTechArt_Booking.Domain.Models;
-using iTechArt_Booking.Infastructure.Repositories.Fakes;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

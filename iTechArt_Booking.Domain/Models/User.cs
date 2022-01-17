@@ -17,5 +17,3 @@ namespace iTechArt_Booking.Domain.Models
     }
 
 }
-//save user in db
-//add servise and controller   // moddel in web //registrationnmodels.cs
