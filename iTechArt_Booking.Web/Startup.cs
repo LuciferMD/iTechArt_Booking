@@ -63,7 +63,7 @@ namespace iTechArt_Booking.Web
                         ValidateLifetime = true,
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey = new SymmetricSecurityKey(
-                            Encoding.UTF8.GetBytes("efwcwwewergfwfwef"))
+                            Encoding.UTF8.GetBytes(Configuration["Identity:JwtKey"]))
                     };
                 });
 

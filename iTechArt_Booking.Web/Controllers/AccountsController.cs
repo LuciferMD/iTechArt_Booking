@@ -3,6 +3,7 @@ using iTechArt_Booking.WebUI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,14 @@ namespace iTechArt_Booking.WebUI.Controllers
     [ApiController]
     public class AccountsController : ControllerBase
     {
+     
+
         private UserManager<User> userManager;
-        public AccountsController(UserManager<User> usrMgr)
+        private IConfiguration Configuration;
+        public AccountsController(UserManager<User> usrMgr, IConfiguration configuration)
         {
             userManager = usrMgr;
+            Configuration = configuration;
         }
 
         [HttpPost("/signup")]
@@ -42,7 +47,7 @@ namespace iTechArt_Booking.WebUI.Controllers
                         StatusCodes.Status500InternalServerError,
                     new
                     {
-                        Message = "User creation failed",
+                        Message = Configuration["Message:Failed"],
                         Errors = result.Errors
                     }
                 );
@@ -51,8 +56,7 @@ namespace iTechArt_Booking.WebUI.Controllers
 
             return Ok(new
             {
-                Status = "Succes",
-                Message = "User created successfully"
+                Message = Configuration["Message:Succes"]
             });
                
         }
@@ -76,7 +80,7 @@ namespace iTechArt_Booking.WebUI.Controllers
                 };
 
                 var SignKey = new SymmetricSecurityKey(
-                    Encoding.UTF8.GetBytes("efwcwwewergfwfwef"));
+                    Encoding.UTF8.GetBytes(Configuration["Identity:JwtKey"]));
 
                 var token = new JwtSecurityToken(
                     expires: DateTime.Now.AddHours(1),
@@ -94,8 +98,8 @@ namespace iTechArt_Booking.WebUI.Controllers
             }
                 return Unauthorized(new
                 {
-                    Message = "Wrong email or password"
-                });
+                    Message = Configuration["Message:WrongLog"]
+                });;
         }
 
     }
