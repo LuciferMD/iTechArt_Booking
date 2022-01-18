@@ -22,6 +22,7 @@ namespace iTechArt_Booking.WebUI.Controllers
             roomService = _roomService;
         }
 
+        [Authorize]
         [HttpGet(Name ="GetAllRooms")]
         public IEnumerable<Room> GetAll()
         {

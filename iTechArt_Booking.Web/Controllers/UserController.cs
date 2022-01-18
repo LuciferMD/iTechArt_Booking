@@ -22,13 +22,14 @@ namespace iTechArt_Booking.WebUI.Controllers
             userService = _userService;
         }
 
+        [Authorize]
         [HttpGet(Name = "GetAllUsers")]
         public IEnumerable<User> GetAll()
         {
             return userService.GetAll();
         }
 
-
+        [Authorize]
         [HttpGet("{id}",Name ="GetUser")]
         public IActionResult Get(Guid id)
         {

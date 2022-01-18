@@ -22,6 +22,12 @@ namespace iTechArt_Booking.Application.Services
             roomRepository.Create(room);
         }
 
+        public Room Get(Guid id)
+        {
+            return roomRepository.Get(id);
+        }
+
+
         public IEnumerable<Room> GetAll()
         {
             return roomRepository.GetAll();

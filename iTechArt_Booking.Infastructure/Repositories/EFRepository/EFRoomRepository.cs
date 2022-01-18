@@ -27,6 +27,10 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
             Context.Rooms.Add(room);
             Context.SaveChanges();
         }
+        public Room Get(Guid id)
+        {
+            return Context.Rooms.Find(id);
+        }
 
     }
 }
