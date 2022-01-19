@@ -33,9 +33,9 @@ namespace iTechArt_Booking.Application.Services
             return bookingRepository.Get(id);
         }
 
-        public IEnumerable<Booking> GetAll()
+        public IEnumerable<Booking> GetAll(Guid userId)
         {
-            return bookingRepository.GetAll();
+            return bookingRepository.GetAll(userId);
         }
     }
 }

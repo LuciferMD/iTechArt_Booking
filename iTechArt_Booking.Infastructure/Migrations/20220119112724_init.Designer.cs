@@ -10,8 +10,8 @@ using iTechArt_Booking.Infastructure.Repositories.EFRepository;
 namespace iTechArt_Booking.Infastructure.Migrations
 {
     [DbContext(typeof(BookingDBContext))]
-    [Migration("20220117181839_ver1")]
-    partial class ver1
+    [Migration("20220119112724_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

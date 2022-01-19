@@ -31,10 +31,17 @@ namespace iTechArt_Booking.WebUI.Controllers
         }
 
         [Authorize]
-        [HttpGet(Name = "GetAllBooking")]
-        public IEnumerable<Booking> GetAll()
+        [HttpGet("user/{userId}",Name = "GetAllBooking")]
+        
+        public IEnumerable<Booking> GetAll(Guid userId)
         {
-            return bookingService.GetAll();
+            User user = userService.Get(userId);
+            if (user == null)
+            {
+                return (IEnumerable<Booking>)BadRequest(new { message = "The user with the specified id does not exist"});//???
+            }
+
+            return bookingService.GetAll(userId);
         }
 
 

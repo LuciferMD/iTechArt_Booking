@@ -17,9 +17,9 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
             Context = context;
         }
 
-        public IEnumerable<Booking> GetAll()
+        public IEnumerable<Booking> GetAll(Guid userId)
         {
-            return Context.Booking;
+            return Context.Booking.Where(b => b.User.Id == userId);
         }
 
         public Booking Get(Guid id)
