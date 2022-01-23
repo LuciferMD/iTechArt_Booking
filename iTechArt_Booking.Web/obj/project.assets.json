@@ -1570,28 +1570,15 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Bookingю.Application.csproj": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.11",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.11",
-          "iTechArt_Bookingю.Application": "1.0.0"
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.11"
         },
         "compile": {
           "bin/placeholder/iTechArt_Booking.Infastructure.dll": {}
         },
         "runtime": {
           "bin/placeholder/iTechArt_Booking.Infastructure.dll": {}
-        }
-      },
-      "iTechArt_Bookingю.Application/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "iTechArt_Booking.Domain": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/iTechArt_Bookingю.Application.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/iTechArt_Bookingю.Application.dll": {}
         }
       }
     }
@@ -5873,19 +5860,14 @@
       "type": "project",
       "path": "../iTechArt_Booking.Infastructure/iTechArt_Booking.Infastructure.csproj",
       "msbuildProject": "../iTechArt_Booking.Infastructure/iTechArt_Booking.Infastructure.csproj"
-    },
-    "iTechArt_Bookingю.Application/1.0.0": {
-      "type": "project",
-      "path": "../iTechArt_Bookingю.Application/iTechArt_Bookingю.Application.csproj",
-      "msbuildProject": "../iTechArt_Bookingю.Application/iTechArt_Bookingю.Application.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Bookingю.Application.csproj",
       "Swashbuckle.AspNetCore >= 5.6.3",
       "iTechArt_Booking.Domain >= 1.0.0",
-      "iTechArt_Booking.Infastructure >= 1.0.0",
-      "iTechArt_Bookingю.Application >= 1.0.0"
+      "iTechArt_Booking.Infastructure >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5964,8 +5946,19 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Не удалось найти сведения о проекте для \"D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Bookingю.Application.csproj\". Если вы используете Visual Studio, причина может заключаться в том, что проект выгружен или не является частью текущего решения. В этом случае выполните восстановление из командной строки. В противном случае причина может быть связана с тем, что файл проекта является недопустимым или отсутствуют целевые объекты, необходимые для восстановления.",
+      "libraryId": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Bookingю.Application.csproj",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "5og5Gek5FS5XcPhsb5JXIvRLiN1Kz5je/vH1D7bXrDxLTC0Il6yX7hxV3xFgDW1UVTg+c8QzVnVQV8OyLf8YYQ==",
-  "success": true,
+  "dgSpecHash": "+ox0JWNgcDicUzOC88ip9ZYPo2ts6fmvUVCoj6vXW30U1V7QeJ1EroERLhWI6pkkvbr/q103ZYy+7ZwI1PgaUw==",
+  "success": false,
   "projectFilePath": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Booking.Infastructure\\iTechArt_Booking.Infastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
@@ -102,5 +102,15 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Не удалось найти сведения о проекте для \"D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Bookingю.Application.csproj\". Если вы используете Visual Studio, причина может заключаться в том, что проект выгружен или не является частью текущего решения. В этом случае выполните восстановление из командной строки. В противном случае причина может быть связана с тем, что файл проекта является недопустимым или отсутствуют целевые объекты, необходимые для восстановления.",
+      "libraryId": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Bookingю.Application\\iTechArt_Bookingю.Application.csproj",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }
