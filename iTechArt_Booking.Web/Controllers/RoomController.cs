@@ -1,6 +1,7 @@
 ﻿using iTechArt_Booking.Application.Services;
 using iTechArt_Booking.Domain.Interfaces;
 using iTechArt_Booking.Domain.Models;
+using iTechArt_Booking.WebUI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,10 +17,11 @@ namespace iTechArt_Booking.WebUI.Controllers
     public class RoomController : Controller
     {
         RoomService roomService;
-
-        public RoomController (RoomService _roomService)
+        HotelService hotelService;
+        public RoomController (RoomService _roomService,HotelService _hotelService)
         {
             roomService = _roomService;
+            hotelService = _hotelService;
         }
 
         [Authorize]
@@ -31,12 +33,29 @@ namespace iTechArt_Booking.WebUI.Controllers
 
         [Authorize]
         [HttpPost]
-        public IActionResult Create([FromBody]Room room)
+        public IActionResult Create([FromBody]RoomModel roomM)
         {
-            if (room == null)
+            if (roomM == null)
             {
                 return BadRequest();
             }
+
+            var hotel = hotelService.Get(roomM.HotelId);
+
+            if (hotel == null)
+            {
+                return BadRequest(new { message = "The hotel with the specified id does not exist" });
+            }
+
+            Room room = new Room
+            {
+                Id = roomM.Id,
+                Category = roomM.Category,
+                CostPerDay = roomM.CostPerDay,
+                NumberOfBeds = roomM.NumberOfBeds,
+                Hotel = hotel
+            };
+
             roomService.Create(room);
             return CreatedAtRoute("GetUser", new { Id = room.Id }, room);     
 

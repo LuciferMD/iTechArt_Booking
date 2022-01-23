@@ -36,8 +36,6 @@ namespace iTechArt_Booking.Web
 
             services.AddDbContext<BookingDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
 
-             
-
             services.AddScoped<IUserRepository, EFUserRepository>();
             services.AddScoped<UserService>();
 
@@ -71,6 +69,9 @@ namespace iTechArt_Booking.Web
                 .AddRoles<IdentityRole<Guid>>()
                 .AddEntityFrameworkStores<BookingDBContext>()
                 .AddDefaultTokenProviders();
+
+            services.AddControllers().AddNewtonsoftJson(options =>
+            options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore  );
 
 
             services.AddSwaggerGen(c =>

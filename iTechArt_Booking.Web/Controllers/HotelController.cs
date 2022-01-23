@@ -1,6 +1,7 @@
 ﻿using iTechArt_Booking.Application.Services;
 using iTechArt_Booking.Domain.Interfaces;
 using iTechArt_Booking.Domain.Models;
+using iTechArt_Booking.WebUI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -50,12 +51,24 @@ namespace iTechArt_Booking.WebUI.Controllers
 
         [Authorize]
         [HttpPost]
-        public IActionResult Create([FromBody] Hotel hotel)
+        public IActionResult Create([FromBody] HotelModel hotelM)
         {
-            if (hotel == null)
+            if (hotelM == null)
             {
                 return BadRequest();
             }
+
+            Hotel hotel = new Hotel
+            {
+                Id = hotelM.Id,
+                Name = hotelM.Name,
+                Stars = hotelM.Stars,
+                Pictures = hotelM.Pictures,
+                Description = hotelM.Description,
+                Reviews = null,
+                Rooms = null
+            };
+
             hotelService.Create(hotel);
             return CreatedAtRoute("GetHotel", new { id = hotel.Id }, hotel);
             

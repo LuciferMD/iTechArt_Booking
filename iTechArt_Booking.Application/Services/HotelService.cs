@@ -20,9 +20,13 @@ namespace iTechArt_Booking.Application.Services
         {
             return hotelRepository.GetAll();
         }
+
+
         public Hotel Get(Guid id)
         {
-            return hotelRepository.Get(id);
+            var hotels = hotelRepository.Get(id);
+
+            return hotels;
         }
 
         public void Create(Hotel hotel)
