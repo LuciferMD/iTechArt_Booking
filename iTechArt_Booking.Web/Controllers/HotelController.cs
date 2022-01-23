@@ -20,11 +20,12 @@ namespace iTechArt_Booking.WebUI.Controllers
         //   private readonly HotelService hotelService = new Booking(new HotelFakeRepository());
 
         HotelService hotelService;
+        RoomService roomService;
 
-
-        public HotelController (HotelService _hotelService)
+        public HotelController (HotelService _hotelService, RoomService _roomService)
         {
             hotelService = _hotelService;
+            roomService = _roomService;
         }
 
 
@@ -58,6 +59,8 @@ namespace iTechArt_Booking.WebUI.Controllers
                 return BadRequest();
             }
 
+            var rooms = roomService.GetAllHotels(hotelM.RoomId);
+
             Hotel hotel = new Hotel
             {
                 Id = hotelM.Id,
@@ -65,8 +68,8 @@ namespace iTechArt_Booking.WebUI.Controllers
                 Stars = hotelM.Stars,
                 Pictures = hotelM.Pictures,
                 Description = hotelM.Description,
+                Rooms = rooms,
                 Reviews = null,
-                Rooms = null
             };
 
             hotelService.Create(hotel);

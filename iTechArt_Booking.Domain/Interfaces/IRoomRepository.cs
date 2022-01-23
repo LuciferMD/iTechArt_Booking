@@ -14,6 +14,8 @@ namespace iTechArt_Booking.Domain.Interfaces
         void Create(Room room);
 
         Room Get(Guid id);
+
+        IEnumerable<Room> GetAllHotels(IEnumerable<Guid> RoomsId);
     }
 
 }

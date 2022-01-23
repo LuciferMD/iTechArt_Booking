@@ -32,5 +32,10 @@ namespace iTechArt_Booking.Application.Services
         {
             return roomRepository.GetAll();
         }
+
+        public IEnumerable<Room> GetAllHotels(IEnumerable<Guid> roomsId)
+        {
+            return roomRepository.GetAllHotels(roomsId);
+        }
     }
 }

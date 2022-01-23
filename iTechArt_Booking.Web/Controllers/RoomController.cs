@@ -18,7 +18,7 @@ namespace iTechArt_Booking.WebUI.Controllers
     {
         RoomService roomService;
         HotelService hotelService;
-        public RoomController (RoomService _roomService,HotelService _hotelService)
+        public RoomController (RoomService _roomService, HotelService _hotelService)
         {
             roomService = _roomService;
             hotelService = _hotelService;

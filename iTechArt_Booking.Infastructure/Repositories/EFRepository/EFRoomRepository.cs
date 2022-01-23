@@ -32,5 +32,12 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
             return Context.Rooms.Find(id);
         }
 
+        public IEnumerable<Room> GetAllHotels(IEnumerable<Guid> roomsId)
+        {
+            var rooms = Context.Rooms.Where(r => roomsId.Contains(r.Id)).ToList();
+
+            return rooms;
+        }
+
     }
 }
