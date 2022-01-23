@@ -1,5 +1,6 @@
 ﻿using iTechArt_Booking.Domain.Interfaces;
 using iTechArt_Booking.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
 
         public IEnumerable<Room> GetAllHotels(IEnumerable<Guid> roomsId)
         {
-            var rooms = Context.Rooms.Where(r => roomsId.Contains(r.Id)).ToList();
+            var rooms = Context.Rooms.Include(r => r.Hotel);
 
             return rooms;
         }

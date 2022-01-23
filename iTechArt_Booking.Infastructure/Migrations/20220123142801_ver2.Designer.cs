@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iTechArt_Booking.Infastructure.Repositories.EFRepository;
 
 namespace iTechArt_Booking.Infastructure.Migrations
 {
     [DbContext(typeof(BookingDBContext))]
-    partial class BookingDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220123142801_ver2")]
+    partial class ver2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -213,7 +215,7 @@ namespace iTechArt_Booking.Infastructure.Migrations
                     b.Property<Guid>("AuthorId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("HotelId")
+                    b.Property<Guid>("Hotelid")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Text")
@@ -223,7 +225,7 @@ namespace iTechArt_Booking.Infastructure.Migrations
 
                     b.HasIndex("AuthorId");
 
-                    b.HasIndex("HotelId");
+                    b.HasIndex("Hotelid");
 
                     b.ToTable("Reviews");
                 });
@@ -408,7 +410,7 @@ namespace iTechArt_Booking.Infastructure.Migrations
 
                     b.HasOne("iTechArt_Booking.Domain.Models.Hotel", "Hotel")
                         .WithMany("Reviews")
-                        .HasForeignKey("HotelId")
+                        .HasForeignKey("Hotelid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

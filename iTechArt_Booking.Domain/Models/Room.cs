@@ -19,6 +19,7 @@ namespace iTechArt_Booking.Domain.Models
 
         public byte NumberOfBeds { get; set; }
 
+        public Guid HotelId { get; set; }
         public Hotel Hotel { get; set; }
     }
 }

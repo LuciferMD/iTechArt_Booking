@@ -22,7 +22,9 @@ namespace iTechArt_Booking.Domain.Models
         public DateTime CreationDate { get; set;}
         public DateTime StartDate {get;set;}
         public DateTime EndDate { get; set; }
+        public Guid UserId { get; set; }
         public User User { get; set; } //navigation properties
+        public Guid RoomId { get; set; }
         public Room Room { get; set; } //navigation properties
     }
 }
