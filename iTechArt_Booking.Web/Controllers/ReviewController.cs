@@ -1,6 +1,7 @@
 ﻿using iTechArt_Booking.Application.Services;
 using iTechArt_Booking.Domain.Interfaces;
 using iTechArt_Booking.Domain.Models;
+using iTechArt_Booking.WebUI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,10 +17,13 @@ namespace iTechArt_Booking.WebUI.Controllers
     public class ReviewController : Controller
     {
         ReviewService reviewService;
-
-        public ReviewController(ReviewService _reviewService)
+        HotelService hotelService;
+        UserService userService;
+        public ReviewController(ReviewService _reviewService, HotelService _hotelService, UserService _userService)
         {
             reviewService = _reviewService;
+            hotelService = _hotelService;
+            userService = _userService;
         }
 
 
@@ -47,12 +51,34 @@ namespace iTechArt_Booking.WebUI.Controllers
 
         [Authorize]
         [HttpPost]
-        public IActionResult Create([FromBody] Review review)
+        public IActionResult Create([FromBody] ReviewModel reviewM)
         {
-            if (review == null)
+            if (reviewM == null)
             {
                 return BadRequest();
             }
+
+            var hotel = hotelService.Get(reviewM.HotelId);
+            if(hotel == null)
+            {
+                return BadRequest(new { message = "The hotel with the specified id does not exist" });
+            }
+
+            var user = userService.Get(reviewM.AuthorId);
+            if (user == null)
+            {
+                return BadRequest(new { message = "The author with the specified id does not exist" });
+            }
+
+
+            Review review = new Review
+            {
+                Id = reviewM.Id,
+                Text = reviewM.Text,
+                Author = user,
+                Hotel = hotel
+
+            };
 
             reviewService.Create(review);
             return CreatedAtRoute("GetReview", new { Id = review.Id }, review);
