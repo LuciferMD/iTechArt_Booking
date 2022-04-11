@@ -175,8 +175,8 @@ namespace iTechArt_Booking.Infastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    AuthorId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    HotelId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    AuthorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    HotelId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Text = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -187,13 +187,13 @@ namespace iTechArt_Booking.Infastructure.Migrations
                         column: x => x.AuthorId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Reviews_Hotels_HotelId",
                         column: x => x.HotelId,
                         principalTable: "Hotels",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -204,7 +204,7 @@ namespace iTechArt_Booking.Infastructure.Migrations
                     Category = table.Column<int>(type: "int", nullable: false),
                     CostPerDay = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     NumberOfBeds = table.Column<byte>(type: "tinyint", nullable: false),
-                    HotelId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    HotelId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -214,7 +214,7 @@ namespace iTechArt_Booking.Infastructure.Migrations
                         column: x => x.HotelId,
                         principalTable: "Hotels",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -226,8 +226,8 @@ namespace iTechArt_Booking.Infastructure.Migrations
                     CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    RoomId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    RoomId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -237,13 +237,13 @@ namespace iTechArt_Booking.Infastructure.Migrations
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Booking_Rooms_RoomId",
                         column: x => x.RoomId,
                         principalTable: "Rooms",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

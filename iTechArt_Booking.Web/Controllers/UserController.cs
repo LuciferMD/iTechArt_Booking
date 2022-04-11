@@ -12,7 +12,7 @@ using iTechArt_Booking.Application.Services;
 namespace iTechArt_Booking.WebUI.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+  // [ApiController]
     public class UserController : Controller
     {
         UserService userService;
@@ -22,14 +22,15 @@ namespace iTechArt_Booking.WebUI.Controllers
             userService = _userService;
         }
 
-        [Authorize]
+       
+        [Authorize(Roles="admin")]
         [HttpGet(Name = "GetAllUsers")]
         public IEnumerable<User> GetAll()
         {
             return userService.GetAll();
         }
 
-        [Authorize]
+       
         [HttpGet("{id}",Name ="GetUser")]
         public IActionResult Get(Guid id)
         {
@@ -43,7 +44,7 @@ namespace iTechArt_Booking.WebUI.Controllers
         }
 
 
-        [Authorize]
+        
         [HttpPost]   
         public IActionResult Create ([FromBody] User user)
         {
@@ -56,7 +57,7 @@ namespace iTechArt_Booking.WebUI.Controllers
         }
 
 
-        [Authorize]
+        
         [HttpPut("{id}", Name = "UpdateUser")] // to do
         public IActionResult Update (Guid id,[FromBody] User updatedUser)
         {
@@ -75,7 +76,7 @@ namespace iTechArt_Booking.WebUI.Controllers
             return RedirectToRoute("GetAllItems");
         }
 
-        [Authorize]
+      
         [HttpDelete("{id}")]
         public IActionResult Delete (Guid id)
         {

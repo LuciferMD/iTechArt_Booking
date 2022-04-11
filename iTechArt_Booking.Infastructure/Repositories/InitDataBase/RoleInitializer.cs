@@ -1,6 +1,5 @@
-﻿using iTechArt_Booking.Domain.Interfaces;
-using iTechArt_Booking.Domain.Models;
-using iTechArt_Booking.Infastructure.Repositories.EFRepository;
+﻿using iTechArt_Booking.Domain.Models;
+
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Threading.Tasks;

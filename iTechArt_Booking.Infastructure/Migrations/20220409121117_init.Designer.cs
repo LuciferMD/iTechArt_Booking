@@ -10,7 +10,7 @@ using iTechArt_Booking.Infastructure.Repositories.EFRepository;
 namespace iTechArt_Booking.Infastructure.Migrations
 {
     [DbContext(typeof(BookingDBContext))]
-    [Migration("20220119112724_init")]
+    [Migration("20220409121117_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -162,7 +162,7 @@ namespace iTechArt_Booking.Infastructure.Migrations
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("RoomId")
+                    b.Property<Guid>("RoomId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("StartDate")
@@ -171,7 +171,7 @@ namespace iTechArt_Booking.Infastructure.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("UserId")
+                    b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -212,10 +212,10 @@ namespace iTechArt_Booking.Infastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("AuthorId")
+                    b.Property<Guid>("AuthorId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("HotelId")
+                    b.Property<Guid>("HotelId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Text")
@@ -242,7 +242,7 @@ namespace iTechArt_Booking.Infastructure.Migrations
                     b.Property<decimal>("CostPerDay")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<Guid?>("HotelId")
+                    b.Property<Guid>("HotelId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<byte>("NumberOfBeds")
@@ -385,11 +385,15 @@ namespace iTechArt_Booking.Infastructure.Migrations
                 {
                     b.HasOne("iTechArt_Booking.Domain.Models.Room", "Room")
                         .WithMany()
-                        .HasForeignKey("RoomId");
+                        .HasForeignKey("RoomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("iTechArt_Booking.Domain.Models.User", "User")
                         .WithMany("Bookings")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Room");
 
@@ -400,11 +404,15 @@ namespace iTechArt_Booking.Infastructure.Migrations
                 {
                     b.HasOne("iTechArt_Booking.Domain.Models.User", "Author")
                         .WithMany()
-                        .HasForeignKey("AuthorId");
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("iTechArt_Booking.Domain.Models.Hotel", "Hotel")
                         .WithMany("Reviews")
-                        .HasForeignKey("HotelId");
+                        .HasForeignKey("HotelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Author");
 
@@ -415,7 +423,9 @@ namespace iTechArt_Booking.Infastructure.Migrations
                 {
                     b.HasOne("iTechArt_Booking.Domain.Models.Hotel", "Hotel")
                         .WithMany("Rooms")
-                        .HasForeignKey("HotelId");
+                        .HasForeignKey("HotelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Hotel");
                 });
