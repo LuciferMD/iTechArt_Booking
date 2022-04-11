@@ -12,7 +12,7 @@ using iTechArt_Booking.Application.Services;
 namespace iTechArt_Booking.WebUI.Controllers
 {
     [Route("api/[controller]")]
-  // [ApiController]
+    [ApiController]
     public class UserController : Controller
     {
         UserService userService;

@@ -71,13 +71,21 @@ namespace iTechArt_Booking.WebUI.Controllers
 
             if (user != null && await userManager.CheckPasswordAsync(user, logModel.Password))
             {
+                
+                var roles = await userManager.GetRolesAsync(user);
+                
                 var authClaims = new List<Claim>
                 {
                     new Claim(ClaimTypes.NameIdentifier , user.Id.ToString()),
                     new Claim(ClaimTypes.Email, user.Email),
-                    new Claim(ClaimTypes.Name , user.FirstName)
-                          //  new Claim(ClaimTypes.Role, ...) TO DO  
+                    new Claim(ClaimTypes.Name , user.FirstName),
+
                 };
+                foreach (var role in roles)
+                {
+                    authClaims.Add(new Claim(ClaimTypes.Role, role));
+                }
+          
 
                 var SignKey = new SymmetricSecurityKey(
                     Encoding.UTF8.GetBytes(Configuration["Identity:JwtKey"]));
