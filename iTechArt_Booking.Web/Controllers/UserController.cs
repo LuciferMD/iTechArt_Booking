@@ -11,6 +11,7 @@ using iTechArt_Booking.Application.Services;
 
 namespace iTechArt_Booking.WebUI.Controllers
 {
+    [Authorize(Roles="admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : Controller
@@ -23,7 +24,6 @@ namespace iTechArt_Booking.WebUI.Controllers
         }
 
        
-        [Authorize(Roles="admin")]
         [HttpGet(Name = "GetAllUsers")]
         public IEnumerable<User> GetAll()
         {

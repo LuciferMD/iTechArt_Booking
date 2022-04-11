@@ -31,7 +31,7 @@ namespace iTechArt_Booking.WebUI.Controllers
             return roomService.GetAll();
         }
 
-        [Authorize]
+        [Authorize(Roles = "admin")]
         [HttpPost]
         public IActionResult Create([FromBody]RoomModel roomM)
         {

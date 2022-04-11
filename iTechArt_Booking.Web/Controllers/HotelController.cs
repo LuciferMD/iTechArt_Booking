@@ -50,8 +50,9 @@ namespace iTechArt_Booking.WebUI.Controllers
         }
 
 
-        [Authorize]
+        [Authorize(Roles="admin")]
         [HttpPost]
+        
         public IActionResult Create([FromBody] HotelModel hotelM)
         {
             if (hotelM == null)
@@ -79,7 +80,7 @@ namespace iTechArt_Booking.WebUI.Controllers
 
 
 
-        [Authorize]
+        [Authorize(Roles = "admin")]
         [HttpPut("{id}")] //to do
         public IActionResult Update(Guid id,[FromBody] Hotel updatedHotel)
         {
@@ -99,7 +100,7 @@ namespace iTechArt_Booking.WebUI.Controllers
             return RedirectToRoute("GetAllHotels");
         }
 
-        [Authorize]
+        [Authorize(Roles = "admin")]
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
