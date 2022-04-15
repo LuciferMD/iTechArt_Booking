@@ -63,7 +63,9 @@ namespace iTechArt_Booking.Web
                         IssuerSigningKey = new SymmetricSecurityKey(
                             Encoding.UTF8.GetBytes(Configuration["Identity:JwtKey"]))
                     };
+                    
                 });
+
 
             services.AddIdentityCore<User>()
                 .AddRoles<IdentityRole<Guid>>()
