@@ -32,6 +32,18 @@ namespace iTechArt_Booking.WebUI.Controllers
         [HttpPost("/signup")]
         public async Task<IActionResult> Register (RegisterUserModel regModel)
         {
+
+            if(!ModelState.IsValid)
+            {
+                return StatusCode(
+                    StatusCodes.Status400BadRequest,
+                    new
+                    {
+                        Message = ModelState.Values,                     
+                    }
+                );
+            }
+
             var user = new User()
             {
                 FirstName = regModel.FirstName,
