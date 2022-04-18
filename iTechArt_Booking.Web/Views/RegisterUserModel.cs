@@ -13,7 +13,7 @@ namespace iTechArt_Booking.WebUI.Models
         public string FirstName { get; set; }
 
         [Required(ErrorMessage ="Empty email")]
-        [EmailAddress(ErrorMessage ="Impossible email")]
+        [EmailAddress(ErrorMessage ="Wrong email")]
         public string Email { get; set; }
 
         [Required(ErrorMessage ="Empty password")]

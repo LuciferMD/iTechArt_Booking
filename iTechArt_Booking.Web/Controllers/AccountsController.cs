@@ -79,6 +79,17 @@ namespace iTechArt_Booking.WebUI.Controllers
         [HttpPost("/login")]
         public async Task<IActionResult> Login([FromBody] LoginUserModel logModel)
         {
+            if (!ModelState.IsValid)
+            {
+                return StatusCode(
+                    StatusCodes.Status400BadRequest,
+                    new
+                    {
+                        Message = ModelState.Values
+                    }
+                    );
+            }
+
             var user = await userManager.FindByNameAsync(logModel.Email);
 
             if (user != null && await userManager.CheckPasswordAsync(user, logModel.Password))
