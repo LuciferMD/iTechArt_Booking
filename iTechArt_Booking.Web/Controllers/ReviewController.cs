@@ -53,6 +53,17 @@ namespace iTechArt_Booking.WebUI.Controllers
         [HttpPost]
         public IActionResult Create([FromBody] ReviewModel reviewM)
         {
+            if (!ModelState.IsValid)
+            {
+                return StatusCode(
+                    StatusCodes.Status400BadRequest,
+                    new
+                        {
+                            Message = ModelState.Values
+                        }
+                );
+            }
+
             if (reviewM == null)
             {
                 return BadRequest();

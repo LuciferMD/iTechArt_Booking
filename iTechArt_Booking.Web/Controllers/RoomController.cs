@@ -35,9 +35,15 @@ namespace iTechArt_Booking.WebUI.Controllers
         [HttpPost]
         public IActionResult Create([FromBody]RoomModel roomM)
         {
-            if (roomM == null)
+            if (!ModelState.IsValid)
             {
-                return BadRequest();
+                return StatusCode(
+                    StatusCodes.Status400BadRequest,
+                    new
+                    {
+                        Message = ModelState.Values
+                    }
+                );
             }
 
             var hotel = hotelService.Get(roomM.HotelId);
