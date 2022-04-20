@@ -90,7 +90,7 @@ namespace iTechArt_Booking.WebUI.Controllers
                     );
             }
 
-            var user = await userManager.FindByNameAsync(logModel.Email);
+            var user = await userManager.FindByEmailAsync(logModel.Email);
 
             if (user != null && await userManager.CheckPasswordAsync(user, logModel.Password))
             {

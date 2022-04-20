@@ -12,7 +12,7 @@ namespace iTechArt_Booking.WebUI.Models
         [EmailAddress(ErrorMessage ="Wrong email")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage ="Empty eamil")]
+        [Required(ErrorMessage ="Empty password")]
         [StringLength(40,ErrorMessage = "Password max 40")]
         public string Password { get; set; }
     }

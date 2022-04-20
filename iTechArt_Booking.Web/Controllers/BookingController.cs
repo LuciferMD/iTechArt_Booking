@@ -3,6 +3,7 @@ using iTechArt_Booking.Domain.Interfaces;
 using iTechArt_Booking.Domain.Models;
 using iTechArt_Booking.WebUI.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -62,10 +63,17 @@ namespace iTechArt_Booking.WebUI.Controllers
         [HttpPost]
         public IActionResult Create([FromBody] BookingModel bookingM)
         {
-            if(bookingM == null)
+            if (!ModelState.IsValid)
             {
-                return BadRequest();
+                return StatusCode(
+                    StatusCodes.Status400BadRequest,
+                    new
+                        {
+                            Message = ModelState.Values
+                        }
+                    );
             }
+            
 
             User user = userService.Get(bookingM.UserId);
             if (user == null)
