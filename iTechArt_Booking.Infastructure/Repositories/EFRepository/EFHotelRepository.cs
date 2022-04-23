@@ -102,8 +102,12 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
             string path = "..\\iTechArt_Booking.Infastructure\\Images\\Hotels\\" + hotel.Name+".png";
 
             FileStream stream = new FileStream(path, FileMode.Create);
-            file.CopyTo(stream);
+            file.CopyToAsync(stream);
             stream.Close();
+
+            hotel.Pictures = path;
+            Context.Hotels.Update(hotel);
+            Context.SaveChanges();
 
             return true;
         }
