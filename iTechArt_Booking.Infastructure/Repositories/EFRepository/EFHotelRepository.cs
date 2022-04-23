@@ -1,11 +1,12 @@
 ﻿using iTechArt_Booking.Domain.Interfaces;
 using iTechArt_Booking.Domain.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
 {
@@ -92,6 +93,19 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
             }
 
             return Context.Reviews.Where(r => r.Hotel.Id == id);
+        }
+
+        public bool UploadImage(Guid id, IFormFile file)
+        {
+            Hotel hotel = Get(id);
+
+            string path = "..\\iTechArt_Booking.Infastructure\\Images\\Hotels\\" + hotel.Name+".png";
+
+            FileStream stream = new FileStream(path, FileMode.Create);
+            file.CopyTo(stream);
+            stream.Close();
+
+            return true;
         }
     }
 }

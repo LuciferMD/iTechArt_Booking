@@ -17,7 +17,7 @@ namespace iTechArt_Booking.WebUI.Controllers
     [ApiController]
     public class HotelController : Controller
     {
-        //   private readonly HotelService hotelService = new Booking(new HotelFakeRepository());
+        //private readonly HotelService hotelService = new Booking(new HotelFakeRepository());
 
         HotelService hotelService;
         RoomService roomService;
@@ -146,5 +146,24 @@ namespace iTechArt_Booking.WebUI.Controllers
         }
 
 
-    }
+        [Authorize(Roles ="admin")]
+        [HttpPost("{id}/image")]
+
+        public IActionResult UploadImage(Guid id, IFormFile file)
+        {
+            var hotel = hotelService.Get(id);
+
+            if (hotel == null)
+            {
+                return NotFound();
+            }
+
+            if(hotelService.UploadImage(id, file))
+            {
+                return Ok();
+            }
+
+            return BadRequest();
+        }
+    } 
 }

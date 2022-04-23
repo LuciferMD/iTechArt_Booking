@@ -1,4 +1,5 @@
 ﻿using iTechArt_Booking.Domain.Models;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,8 @@ namespace iTechArt_Booking.Domain.Interfaces
          IEnumerable<Review> HotelReviews(Guid id);
 
          IEnumerable<Room> GetFreeRooms(Guid id, DateTime startDate, DateTime  endTime);
+
+         bool UploadImage(Guid id, IFormFile file);
     }
 
  }

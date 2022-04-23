@@ -1,5 +1,6 @@
 ﻿using iTechArt_Booking.Domain.Interfaces;
 using iTechArt_Booking.Domain.Models;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,6 +56,10 @@ namespace iTechArt_Booking.Application.Services
         {
             return hotelRepository.HotelReviews(id);
         }
-         
+
+        public bool UploadImage(Guid id, IFormFile file)
+        {
+            return hotelRepository.UploadImage(id,file);
+        }
     }
 }

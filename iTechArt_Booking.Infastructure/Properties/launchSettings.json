@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "iTechArt_Booking.Infastructure": {
+      "commandName": "Project",
+      "workingDirectory": "D:\\iTechArt\\iTechArt_Booking\\iTechArt_Booking.Infastructure"
+    }
+  }
+}

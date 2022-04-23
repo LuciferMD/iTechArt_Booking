@@ -23,4 +23,8 @@
     <ProjectReference Include="..\iTechArt_Booking.Application\iTechArt_Booking.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Images\Hotels\" />
+  </ItemGroup>
+
 </Project>
