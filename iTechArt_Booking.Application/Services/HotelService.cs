@@ -3,6 +3,7 @@ using iTechArt_Booking.Domain.Models;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,6 +61,11 @@ namespace iTechArt_Booking.Application.Services
         public bool UploadImage(Guid id, IFormFile file)
         {
             return hotelRepository.UploadImage(id,file);
+        }
+
+        public FileStream DownloadImage(Guid id)
+        {
+            return hotelRepository.DownloadImage(id);
         }
     }
 }

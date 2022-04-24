@@ -111,5 +111,19 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
 
             return true;
         }
+
+        public FileStream DownloadImage(Guid id)
+        {
+            Hotel hotel = Get(id);
+            string path = hotel.Pictures;
+
+            if (!File.Exists(path))
+            {
+                throw new Exception("There isn't image!");
+            }
+
+            return new FileStream(path, FileMode.Open);
+
+        }
     }
 }

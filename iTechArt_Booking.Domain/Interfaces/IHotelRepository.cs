@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,10 @@ namespace iTechArt_Booking.Domain.Interfaces
          IEnumerable<Room> GetFreeRooms(Guid id, DateTime startDate, DateTime  endTime);
 
          bool UploadImage(Guid id, IFormFile file);
+
+         FileStream DownloadImage(Guid id);
+
+          
     }
 
  }

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Threading.Tasks;
 //using iTechArt_Booking.Infastructure.Repositories.Fakes;
 
@@ -165,5 +166,25 @@ namespace iTechArt_Booking.WebUI.Controllers
 
             return BadRequest();
         }
+
+
+        [Authorize(Roles = "admin")]
+        [HttpGet("{id}/image")]
+        public IActionResult DownloadImage(Guid id)
+        {
+            var hotel = hotelService.Get(id);
+
+            if (hotel == null)
+            {
+                return NotFound();
+            }
+
+            ContentType contentType = new ContentType();
+            contentType.MediaType = MediaTypeNames.Image.Jpeg;
+            contentType.Name = contentType.Name = hotel.Name+".jpeg";
+
+            return File(hotelService.DownloadImage(id), contentType.ToString());
+        }
+
     } 
 }
