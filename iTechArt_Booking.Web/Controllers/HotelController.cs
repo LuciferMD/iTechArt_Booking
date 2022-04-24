@@ -186,5 +186,23 @@ namespace iTechArt_Booking.WebUI.Controllers
             return File(hotelService.DownloadImage(id), contentType.ToString());
         }
 
+
+        [Authorize(Roles ="admin")]
+        [HttpDelete("{id}/image")]
+        public IActionResult DeleteImage(Guid id)
+        {
+            var hotel = hotelService.Get(id);
+
+            if (hotel == null)
+            {
+                return NotFound();
+            }
+
+            if (hotelService.DeleteImage(id))
+            {
+                return Ok();
+            }
+            else return BadRequest();
+        }
     } 
 }

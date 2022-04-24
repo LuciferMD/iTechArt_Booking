@@ -29,6 +29,8 @@ namespace iTechArt_Booking.Domain.Interfaces
 
          FileStream DownloadImage(Guid id);
 
+         bool DeleteImage(Guid id);
+
           
     }
 

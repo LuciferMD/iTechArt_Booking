@@ -67,5 +67,10 @@ namespace iTechArt_Booking.Application.Services
         {
             return hotelRepository.DownloadImage(id);
         }
+
+        public bool DeleteImage(Guid id)
+        {
+            return hotelRepository.DeleteImage(id);
+        }
     }
 }

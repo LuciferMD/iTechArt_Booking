@@ -125,5 +125,29 @@ namespace iTechArt_Booking.Infastructure.Repositories.EFRepository
             return new FileStream(path, FileMode.Open);
 
         }
+
+        public bool DeleteImage(Guid id)
+        {
+            Hotel hotel = Get(id);
+            string path = hotel.Pictures;
+
+
+            if (!File.Exists(path))
+            {
+                return false;
+                throw new Exception("There isn't image!");
+              
+            }
+            FileInfo fileInf = new FileInfo(path);
+
+            fileInf.Delete();
+
+            hotel.Pictures = string.Empty;
+            Context.Hotels.Update(hotel);
+            Context.SaveChanges();
+
+            return true;
+
+        }
     }
 }
